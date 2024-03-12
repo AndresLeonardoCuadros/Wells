@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info version="2">
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123140:jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468200:jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123159:jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070462154015:jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/5351203823916750322:jetbrains.mps.baseLanguage.structure.TryUniversalStatement" />
+  <root>
+    <file name="EditorAspectDescriptorImpl.java">
+      <unit at="15,0,37,0" name="NewDSL.editor.EditorAspectDescriptorImpl" />
+    </file>
+  </root>
+  <root nodeRef="r:c6b0b5ae-958d-4a90-bd53-8cfb018cee17(NewDSL.editor)/409683452362614061">
+    <file name="InjectionWell_Editor.java">
+      <node id="409683452362614061" at="11,79,12,79" concept="6" />
+      <node id="409683452362614061" at="11,0,14,0" concept="4" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <scope id="409683452362614061" at="11,79,12,79" />
+      <scope id="409683452362614061" at="11,0,14,0">
+        <var name="editorContext" id="409683452362614061" />
+        <var name="node" id="409683452362614061" />
+      </scope>
+      <unit id="409683452362614061" at="10,0,15,0" name="NewDSL.editor.InjectionWell_Editor" />
+    </file>
+    <file name="InjectionWell_EditorBuilder_a.java">
+      <node id="409683452362614061" at="29,93,30,19" concept="8" />
+      <node id="409683452362614061" at="30,19,31,18" concept="1" />
+      <node id="409683452362614061" at="36,26,37,18" concept="6" />
+      <node id="409683452362614061" at="40,39,41,30" concept="6" />
+      <node id="409683452362695081" at="44,41,45,39" concept="1" />
+      <node id="409683452362695081" at="46,9,47,49" concept="5" />
+      <node id="409683452362695081" at="47,49,48,76" concept="1" />
+      <node id="409683452362695081" at="48,76,49,149" concept="5" />
+      <node id="409683452362695081" at="49,149,50,45" concept="1" />
+      <node id="409683452362695081" at="50,45,51,44" concept="1" />
+      <node id="409683452362695081" at="51,44,52,30" concept="1" />
+      <node id="409683452362695081" at="52,30,53,33" concept="1" />
+      <node id="409683452362695081" at="53,33,54,86" concept="1" />
+      <node id="409683452362695081" at="54,86,55,33" concept="1" />
+      <node id="409683452362695081" at="55,33,56,155" concept="5" />
+      <node id="409683452362695081" at="56,155,57,208" concept="5" />
+      <node id="409683452362695081" at="58,74,59,89" concept="5" />
+      <node id="409683452362695081" at="59,89,60,145" concept="6" />
+      <node id="409683452362695081" at="61,12,62,24" concept="6" />
+      <node id="409683452362695081" at="63,15,64,40" concept="1" />
+      <node id="409683452362614061" at="69,0,70,0" concept="7" trace="Name$qu23" />
+      <node id="409683452362614061" at="73,0,74,0" concept="7" trace="PropertyAttribute$Gb" />
+      <node id="409683452362614061" at="26,0,28,0" concept="2" trace="myNode" />
+      <node id="409683452362614061" at="40,0,43,0" concept="4" trace="createCell#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="409683452362614061" at="29,0,33,0" concept="0" trace="InjectionWell_EditorBuilder_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="409683452362614061" at="34,0,39,0" concept="4" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="409683452362695081" at="57,208,62,24" concept="3" />
+      <node id="409683452362695081" at="45,39,65,5" concept="9" />
+      <node id="409683452362695081" at="44,0,67,0" concept="4" trace="createProperty_0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <scope id="409683452362614061" at="36,26,37,18" />
+      <scope id="409683452362614061" at="40,39,41,30" />
+      <scope id="409683452362695081" at="63,15,64,40" />
+      <scope id="409683452362614061" at="29,93,31,18" />
+      <scope id="409683452362695081" at="58,74,60,145">
+        <var name="manager" id="409683452362695081" />
+      </scope>
+      <scope id="409683452362614061" at="40,0,43,0" />
+      <scope id="409683452362614061" at="29,0,33,0">
+        <var name="context" id="409683452362614061" />
+        <var name="node" id="409683452362614061" />
+      </scope>
+      <scope id="409683452362614061" at="34,0,39,0" />
+      <scope id="409683452362695081" at="46,9,62,24">
+        <var name="currentPropertyAttributes" id="409683452362695081" />
+        <var name="editorCell" id="409683452362695081" />
+        <var name="property" id="409683452362695081" />
+        <var name="propertyAttributes" id="409683452362695081" />
+      </scope>
+      <scope id="409683452362695081" at="44,41,65,5" />
+      <scope id="409683452362695081" at="44,0,67,0" />
+      <unit id="409683452362614061" at="68,0,71,0" name="NewDSL.editor.InjectionWell_EditorBuilder_a$PROPS" />
+      <unit id="409683452362614061" at="72,0,75,0" name="NewDSL.editor.InjectionWell_EditorBuilder_a$CONCEPTS" />
+      <unit id="409683452362614061" at="25,0,76,0" name="NewDSL.editor.InjectionWell_EditorBuilder_a" />
+    </file>
+  </root>
+  <root nodeRef="r:c6b0b5ae-958d-4a90-bd53-8cfb018cee17(NewDSL.editor)/409683452362690932">
+    <file name="ExplorationWell_Editor.java">
+      <node id="409683452362690932" at="11,79,12,81" concept="6" />
+      <node id="409683452362690932" at="11,0,14,0" concept="4" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <scope id="409683452362690932" at="11,79,12,81" />
+      <scope id="409683452362690932" at="11,0,14,0">
+        <var name="editorContext" id="409683452362690932" />
+        <var name="node" id="409683452362690932" />
+      </scope>
+      <unit id="409683452362690932" at="10,0,15,0" name="NewDSL.editor.ExplorationWell_Editor" />
+    </file>
+    <file name="ExplorationWell_EditorBuilder_a.java">
+      <node id="409683452362690932" at="29,95,30,19" concept="8" />
+      <node id="409683452362690932" at="30,19,31,18" concept="1" />
+      <node id="409683452362690932" at="36,26,37,18" concept="6" />
+      <node id="409683452362690932" at="40,39,41,30" concept="6" />
+      <node id="409683452362695078" at="44,41,45,39" concept="1" />
+      <node id="409683452362695078" at="46,9,47,49" concept="5" />
+      <node id="409683452362695078" at="47,49,48,76" concept="1" />
+      <node id="409683452362695078" at="48,76,49,149" concept="5" />
+      <node id="409683452362695078" at="49,149,50,45" concept="1" />
+      <node id="409683452362695078" at="50,45,51,44" concept="1" />
+      <node id="409683452362695078" at="51,44,52,30" concept="1" />
+      <node id="409683452362695078" at="52,30,53,33" concept="1" />
+      <node id="409683452362695078" at="53,33,54,86" concept="1" />
+      <node id="409683452362695078" at="54,86,55,33" concept="1" />
+      <node id="409683452362695078" at="55,33,56,155" concept="5" />
+      <node id="409683452362695078" at="56,155,57,208" concept="5" />
+      <node id="409683452362695078" at="58,74,59,89" concept="5" />
+      <node id="409683452362695078" at="59,89,60,145" concept="6" />
+      <node id="409683452362695078" at="61,12,62,24" concept="6" />
+      <node id="409683452362695078" at="63,15,64,40" concept="1" />
+      <node id="409683452362690932" at="69,0,70,0" concept="7" trace="Name$qu23" />
+      <node id="409683452362690932" at="73,0,74,0" concept="7" trace="PropertyAttribute$Gb" />
+      <node id="409683452362690932" at="26,0,28,0" concept="2" trace="myNode" />
+      <node id="409683452362690932" at="40,0,43,0" concept="4" trace="createCell#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="409683452362690932" at="29,0,33,0" concept="0" trace="ExplorationWell_EditorBuilder_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="409683452362690932" at="34,0,39,0" concept="4" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="409683452362695078" at="57,208,62,24" concept="3" />
+      <node id="409683452362695078" at="45,39,65,5" concept="9" />
+      <node id="409683452362695078" at="44,0,67,0" concept="4" trace="createProperty_0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <scope id="409683452362690932" at="36,26,37,18" />
+      <scope id="409683452362690932" at="40,39,41,30" />
+      <scope id="409683452362695078" at="63,15,64,40" />
+      <scope id="409683452362690932" at="29,95,31,18" />
+      <scope id="409683452362695078" at="58,74,60,145">
+        <var name="manager" id="409683452362695078" />
+      </scope>
+      <scope id="409683452362690932" at="40,0,43,0" />
+      <scope id="409683452362690932" at="29,0,33,0">
+        <var name="context" id="409683452362690932" />
+        <var name="node" id="409683452362690932" />
+      </scope>
+      <scope id="409683452362690932" at="34,0,39,0" />
+      <scope id="409683452362695078" at="46,9,62,24">
+        <var name="currentPropertyAttributes" id="409683452362695078" />
+        <var name="editorCell" id="409683452362695078" />
+        <var name="property" id="409683452362695078" />
+        <var name="propertyAttributes" id="409683452362695078" />
+      </scope>
+      <scope id="409683452362695078" at="44,41,65,5" />
+      <scope id="409683452362695078" at="44,0,67,0" />
+      <unit id="409683452362690932" at="68,0,71,0" name="NewDSL.editor.ExplorationWell_EditorBuilder_a$PROPS" />
+      <unit id="409683452362690932" at="72,0,75,0" name="NewDSL.editor.ExplorationWell_EditorBuilder_a$CONCEPTS" />
+      <unit id="409683452362690932" at="25,0,76,0" name="NewDSL.editor.ExplorationWell_EditorBuilder_a" />
+    </file>
+  </root>
+  <root nodeRef="r:c6b0b5ae-958d-4a90-bd53-8cfb018cee17(NewDSL.editor)/409683452362695084">
+    <file name="ProductionWell_Editor.java">
+      <node id="409683452362695084" at="11,79,12,80" concept="6" />
+      <node id="409683452362695084" at="11,0,14,0" concept="4" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <scope id="409683452362695084" at="11,79,12,80" />
+      <scope id="409683452362695084" at="11,0,14,0">
+        <var name="editorContext" id="409683452362695084" />
+        <var name="node" id="409683452362695084" />
+      </scope>
+      <unit id="409683452362695084" at="10,0,15,0" name="NewDSL.editor.ProductionWell_Editor" />
+    </file>
+    <file name="ProductionWell_EditorBuilder_a.java">
+      <node id="409683452362695084" at="29,94,30,19" concept="8" />
+      <node id="409683452362695084" at="30,19,31,18" concept="1" />
+      <node id="409683452362695084" at="36,26,37,18" concept="6" />
+      <node id="409683452362695084" at="40,39,41,30" concept="6" />
+      <node id="409683452362695086" at="44,41,45,39" concept="1" />
+      <node id="409683452362695086" at="46,9,47,49" concept="5" />
+      <node id="409683452362695086" at="47,49,48,76" concept="1" />
+      <node id="409683452362695086" at="48,76,49,149" concept="5" />
+      <node id="409683452362695086" at="49,149,50,45" concept="1" />
+      <node id="409683452362695086" at="50,45,51,44" concept="1" />
+      <node id="409683452362695086" at="51,44,52,30" concept="1" />
+      <node id="409683452362695086" at="52,30,53,33" concept="1" />
+      <node id="409683452362695086" at="53,33,54,86" concept="1" />
+      <node id="409683452362695086" at="54,86,55,33" concept="1" />
+      <node id="409683452362695086" at="55,33,56,155" concept="5" />
+      <node id="409683452362695086" at="56,155,57,208" concept="5" />
+      <node id="409683452362695086" at="58,74,59,89" concept="5" />
+      <node id="409683452362695086" at="59,89,60,145" concept="6" />
+      <node id="409683452362695086" at="61,12,62,24" concept="6" />
+      <node id="409683452362695086" at="63,15,64,40" concept="1" />
+      <node id="409683452362695084" at="69,0,70,0" concept="7" trace="Name$qu23" />
+      <node id="409683452362695084" at="73,0,74,0" concept="7" trace="PropertyAttribute$Gb" />
+      <node id="409683452362695084" at="26,0,28,0" concept="2" trace="myNode" />
+      <node id="409683452362695084" at="40,0,43,0" concept="4" trace="createCell#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="409683452362695084" at="29,0,33,0" concept="0" trace="ProductionWell_EditorBuilder_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="409683452362695084" at="34,0,39,0" concept="4" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="409683452362695086" at="57,208,62,24" concept="3" />
+      <node id="409683452362695086" at="45,39,65,5" concept="9" />
+      <node id="409683452362695086" at="44,0,67,0" concept="4" trace="createProperty_0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <scope id="409683452362695084" at="36,26,37,18" />
+      <scope id="409683452362695084" at="40,39,41,30" />
+      <scope id="409683452362695086" at="63,15,64,40" />
+      <scope id="409683452362695084" at="29,94,31,18" />
+      <scope id="409683452362695086" at="58,74,60,145">
+        <var name="manager" id="409683452362695086" />
+      </scope>
+      <scope id="409683452362695084" at="40,0,43,0" />
+      <scope id="409683452362695084" at="29,0,33,0">
+        <var name="context" id="409683452362695084" />
+        <var name="node" id="409683452362695084" />
+      </scope>
+      <scope id="409683452362695084" at="34,0,39,0" />
+      <scope id="409683452362695086" at="46,9,62,24">
+        <var name="currentPropertyAttributes" id="409683452362695086" />
+        <var name="editorCell" id="409683452362695086" />
+        <var name="property" id="409683452362695086" />
+        <var name="propertyAttributes" id="409683452362695086" />
+      </scope>
+      <scope id="409683452362695086" at="44,41,65,5" />
+      <scope id="409683452362695086" at="44,0,67,0" />
+      <unit id="409683452362695084" at="68,0,71,0" name="NewDSL.editor.ProductionWell_EditorBuilder_a$PROPS" />
+      <unit id="409683452362695084" at="72,0,75,0" name="NewDSL.editor.ProductionWell_EditorBuilder_a$CONCEPTS" />
+      <unit id="409683452362695084" at="25,0,76,0" name="NewDSL.editor.ProductionWell_EditorBuilder_a" />
+    </file>
+  </root>
+  <root nodeRef="r:c6b0b5ae-958d-4a90-bd53-8cfb018cee17(NewDSL.editor)/409683452362695095">
+    <file name="ReservoriWell_Editor.java">
+      <node id="409683452362695095" at="11,79,12,79" concept="6" />
+      <node id="409683452362695095" at="11,0,14,0" concept="4" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <scope id="409683452362695095" at="11,79,12,79" />
+      <scope id="409683452362695095" at="11,0,14,0">
+        <var name="editorContext" id="409683452362695095" />
+        <var name="node" id="409683452362695095" />
+      </scope>
+      <unit id="409683452362695095" at="10,0,15,0" name="NewDSL.editor.ReservoriWell_Editor" />
+    </file>
+    <file name="ReservoriWell_EditorBuilder_a.java">
+      <node id="409683452362695095" at="29,93,30,19" concept="8" />
+      <node id="409683452362695095" at="30,19,31,18" concept="1" />
+      <node id="409683452362695095" at="36,26,37,18" concept="6" />
+      <node id="409683452362695095" at="40,39,41,30" concept="6" />
+      <node id="409683452362695097" at="44,41,45,39" concept="1" />
+      <node id="409683452362695097" at="46,9,47,49" concept="5" />
+      <node id="409683452362695097" at="47,49,48,76" concept="1" />
+      <node id="409683452362695097" at="48,76,49,149" concept="5" />
+      <node id="409683452362695097" at="49,149,50,45" concept="1" />
+      <node id="409683452362695097" at="50,45,51,44" concept="1" />
+      <node id="409683452362695097" at="51,44,52,30" concept="1" />
+      <node id="409683452362695097" at="52,30,53,33" concept="1" />
+      <node id="409683452362695097" at="53,33,54,86" concept="1" />
+      <node id="409683452362695097" at="54,86,55,33" concept="1" />
+      <node id="409683452362695097" at="55,33,56,155" concept="5" />
+      <node id="409683452362695097" at="56,155,57,208" concept="5" />
+      <node id="409683452362695097" at="58,74,59,89" concept="5" />
+      <node id="409683452362695097" at="59,89,60,145" concept="6" />
+      <node id="409683452362695097" at="61,12,62,24" concept="6" />
+      <node id="409683452362695097" at="63,15,64,40" concept="1" />
+      <node id="409683452362695095" at="69,0,70,0" concept="7" trace="Name$qu23" />
+      <node id="409683452362695095" at="73,0,74,0" concept="7" trace="PropertyAttribute$Gb" />
+      <node id="409683452362695095" at="26,0,28,0" concept="2" trace="myNode" />
+      <node id="409683452362695095" at="40,0,43,0" concept="4" trace="createCell#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="409683452362695095" at="29,0,33,0" concept="0" trace="ReservoriWell_EditorBuilder_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="409683452362695095" at="34,0,39,0" concept="4" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="409683452362695097" at="57,208,62,24" concept="3" />
+      <node id="409683452362695097" at="45,39,65,5" concept="9" />
+      <node id="409683452362695097" at="44,0,67,0" concept="4" trace="createProperty_0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <scope id="409683452362695095" at="36,26,37,18" />
+      <scope id="409683452362695095" at="40,39,41,30" />
+      <scope id="409683452362695097" at="63,15,64,40" />
+      <scope id="409683452362695095" at="29,93,31,18" />
+      <scope id="409683452362695097" at="58,74,60,145">
+        <var name="manager" id="409683452362695097" />
+      </scope>
+      <scope id="409683452362695095" at="40,0,43,0" />
+      <scope id="409683452362695095" at="29,0,33,0">
+        <var name="context" id="409683452362695095" />
+        <var name="node" id="409683452362695095" />
+      </scope>
+      <scope id="409683452362695095" at="34,0,39,0" />
+      <scope id="409683452362695097" at="46,9,62,24">
+        <var name="currentPropertyAttributes" id="409683452362695097" />
+        <var name="editorCell" id="409683452362695097" />
+        <var name="property" id="409683452362695097" />
+        <var name="propertyAttributes" id="409683452362695097" />
+      </scope>
+      <scope id="409683452362695097" at="44,41,65,5" />
+      <scope id="409683452362695097" at="44,0,67,0" />
+      <unit id="409683452362695095" at="68,0,71,0" name="NewDSL.editor.ReservoriWell_EditorBuilder_a$PROPS" />
+      <unit id="409683452362695095" at="72,0,75,0" name="NewDSL.editor.ReservoriWell_EditorBuilder_a$CONCEPTS" />
+      <unit id="409683452362695095" at="25,0,76,0" name="NewDSL.editor.ReservoriWell_EditorBuilder_a" />
+    </file>
+  </root>
+</debug-info>
+

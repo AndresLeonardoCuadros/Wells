@@ -1,0 +1,3 @@
+# Project exclude paths
+/languages/NewDSL/classes_gen/
+/languages/NewDSL/generator/classes_gen/
