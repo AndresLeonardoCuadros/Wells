@@ -36,8 +36,14 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ngI" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+      <concept id="779128492853369165" name="jetbrains.mps.lang.core.structure.SideTransformInfo" flags="ng" index="1KehLL">
+        <property id="779128492853934523" name="cellId" index="1K8rM7" />
       </concept>
     </language>
   </registry>
@@ -214,6 +220,57 @@
       <property role="IQ2nx" value="4432820140242355238" />
       <property role="TrG5h" value="cnshore" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="2YUbHIpdy0I">
+    <property role="EcuMT" value="3439112786153971758" />
+    <property role="TrG5h" value="MultilateralWell" />
+    <property role="19KtqR" value="true" />
+    <ref role="1TJDcQ" node="5_SLwDPvl4N" resolve="Well" />
+    <node concept="PrWs8" id="2YUbHIpdy0K" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+    <node concept="1TJgyj" id="2YUbHIpdy0M" role="1TKVEi">
+      <property role="IQ2ns" value="3439112786153971762" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="location" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="7HsvWp6WOKY" resolve="Coordinates" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="2YUbHIpdy0P">
+    <property role="EcuMT" value="3439112786153971765" />
+    <property role="TrG5h" value="DesignerWell" />
+    <property role="19KtqR" value="true" />
+    <ref role="1TJDcQ" node="5_SLwDPvl4N" resolve="Well" />
+    <node concept="PrWs8" id="2YUbHIpdy0Q" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+    <node concept="1TJgyj" id="2YUbHIpdy0S" role="1TKVEi">
+      <property role="IQ2ns" value="3439112786153971768" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="location" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="7HsvWp6WOKY" resolve="Coordinates" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="2YUbHIpdy0V">
+    <property role="EcuMT" value="3439112786153971771" />
+    <property role="TrG5h" value="HorizontalWell" />
+    <property role="19KtqR" value="true" />
+    <ref role="1TJDcQ" node="5_SLwDPvl4N" resolve="Well" />
+    <node concept="PrWs8" id="2YUbHIpdy0W" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+    <node concept="1TJgyj" id="2YUbHIpdy0Y" role="1TKVEi">
+      <property role="IQ2ns" value="3439112786153971774" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="location" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="7HsvWp6WOKY" resolve="Coordinates" />
+      <node concept="1KehLL" id="2YUbHIpdy11" role="lGtFl">
+        <property role="1K8rM7" value="Constant_6h6dhy_e2a" />
+      </node>
     </node>
   </node>
 </model>
