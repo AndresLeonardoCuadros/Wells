@@ -107,12 +107,15 @@
     <node concept="PrWs8" id="7HsvWp6WOKz" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
-    <node concept="1TJgyj" id="7HsvWp6WOLe" role="1TKVEi">
-      <property role="IQ2ns" value="8889120254093118542" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="Location" />
-      <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="7HsvWp6WOKY" resolve="Coordinates" />
+    <node concept="1TJgyi" id="4Nu3d4ot3qk" role="1TKVEl">
+      <property role="IQ2nx" value="5538878683910256276" />
+      <property role="TrG5h" value="depthPressure" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="4Nu3d4ot3qp" role="1TKVEl">
+      <property role="IQ2nx" value="5538878683910256281" />
+      <property role="TrG5h" value="temperaturePressure" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
   </node>
   <node concept="1TIwiD" id="7HsvWp6WOKL">
@@ -272,6 +275,31 @@
         <property role="1K8rM7" value="Constant_6h6dhy_e2a" />
       </node>
     </node>
+  </node>
+  <node concept="1TIwiD" id="4Nu3d4ot3mb">
+    <property role="EcuMT" value="5538878683910256011" />
+    <property role="TrG5h" value="InjectionType" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="1TJgyi" id="4Nu3d4ot3mg" role="1TKVEl">
+      <property role="IQ2nx" value="5538878683910256016" />
+      <property role="TrG5h" value="vapor" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="4Nu3d4ot3mj" role="1TKVEl">
+      <property role="IQ2nx" value="5538878683910256019" />
+      <property role="TrG5h" value="water" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="4Nu3d4ot3mn" role="1TKVEl">
+      <property role="IQ2nx" value="5538878683910256023" />
+      <property role="TrG5h" value="gas" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="4Nu3d4ot3mt">
+    <property role="EcuMT" value="5538878683910256029" />
+    <property role="TrG5h" value="ProductionType" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
   </node>
 </model>
 
