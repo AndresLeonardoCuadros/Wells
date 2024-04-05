@@ -340,7 +340,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="mJveRCrM6R">
-    <ref role="1XX52x" to="7zo2:7HsvWp6WOKS" resolve="ReservoriWell" />
+    <ref role="1XX52x" to="7zo2:7HsvWp6WOKS" resolve="ReservoirWell" />
     <node concept="3F0A7n" id="mJveRCrM6T" role="2wV5jI">
       <ref role="1NtTu8" to="7zo2:7HsvWp6WnxE" resolve="name" />
     </node>
@@ -626,7 +626,7 @@
         <ref role="1NtTu8" to="7zo2:7ga$5mM1zoV" resolve="temperaturePressure" />
       </node>
       <node concept="3F0ifn" id="7ga$5mM1MnZ" role="3EZMnx">
-        <property role="3F0ifm" value="Reseirvor:" />
+        <property role="3F0ifm" value="Reservoir:" />
         <node concept="ljvvj" id="7ga$5mM1Mo0" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
