@@ -36,11 +36,11 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SConcept;
 
-/*package*/ class ProductionWell_EditorBuilder_a extends AbstractEditorBuilder {
+/*package*/ class ExploratoryWell_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
   private SNode myNode;
 
-  public ProductionWell_EditorBuilder_a(@NotNull EditorContext context, @NotNull SNode node) {
+  public ExploratoryWell_EditorBuilder_a(@NotNull EditorContext context, @NotNull SNode node) {
     super(context);
     myNode = node;
   }
@@ -57,7 +57,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
 
   private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
-    editorCell.setCellId("Collection_oir5qa_a");
+    editorCell.setCellId("Collection_udgfna_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
     editorCell.addEditorCell(createProperty_0());
@@ -75,8 +75,6 @@ import org.jetbrains.mps.openapi.language.SConcept;
     editorCell.addEditorCell(createRefNode_2());
     editorCell.addEditorCell(createConstant_3());
     editorCell.addEditorCell(createRefNode_3());
-    editorCell.addEditorCell(createConstant_4());
-    editorCell.addEditorCell(createRefNode_4());
     return editorCell;
   }
   private EditorCell createProperty_0() {
@@ -190,11 +188,11 @@ import org.jetbrains.mps.openapi.language.SConcept;
   private EditorCell createProperty_5() {
     getCellFactory().pushCellContext();
     try {
-      final SProperty property = PROPS.productionType$qEx1;
+      final SProperty property = PROPS.depthPressure$H1zy;
       getCellFactory().setPropertyInfo(new SPropertyInfo(myNode, property));
       EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new SPropertyAccessor(myNode, property, false, false), myNode);
-      editorCell.setDefaultText("<no productionType>");
-      editorCell.setCellId("property_productionType");
+      editorCell.setDefaultText("<no depthPressure>");
+      editorCell.setCellId("property_depthPressure");
       editorCell.setSubstituteInfo(new SPropertySubstituteInfo(editorCell, property));
       setCellContext(editorCell);
       Iterable<SNode> propertyAttributes = SNodeOperations.ofConcept(new IAttributeDescriptor.AllAttributes().list(myNode), CONCEPTS.PropertyAttribute$Gb);
@@ -211,11 +209,11 @@ import org.jetbrains.mps.openapi.language.SConcept;
   private EditorCell createProperty_6() {
     getCellFactory().pushCellContext();
     try {
-      final SProperty property = PROPS.bpd$t9mA;
+      final SProperty property = PROPS.temperaturePressure$H7DW;
       getCellFactory().setPropertyInfo(new SPropertyInfo(myNode, property));
       EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new SPropertyAccessor(myNode, property, false, false), myNode);
-      editorCell.setDefaultText("<no bpd>");
-      editorCell.setCellId("property_bpd");
+      editorCell.setDefaultText("<no temperaturePressure>");
+      editorCell.setCellId("property_temperaturePressure");
       editorCell.setSubstituteInfo(new SPropertySubstituteInfo(editorCell, property));
       setCellContext(editorCell);
       Iterable<SNode> propertyAttributes = SNodeOperations.ofConcept(new IAttributeDescriptor.AllAttributes().list(myNode), CONCEPTS.PropertyAttribute$Gb);
@@ -231,7 +229,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
   }
   private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Reseirvor:");
-    editorCell.setCellId("Constant_oir5qa_h0");
+    editorCell.setCellId("Constant_udgfna_h0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -239,14 +237,14 @@ import org.jetbrains.mps.openapi.language.SConcept;
     return editorCell;
   }
   private EditorCell createRefNode_0() {
-    SingleRoleCellProvider provider = new ReseirvorSingleRoleHandler_oir5qa_i0(myNode, LINKS.Reseirvor$u$Zd, getEditorContext());
+    SingleRoleCellProvider provider = new ReseirvorSingleRoleHandler_udgfna_i0(myNode, LINKS.Reseirvor$u$Zd, getEditorContext());
     return provider.createCell();
   }
-  private static class ReseirvorSingleRoleHandler_oir5qa_i0 extends SingleRoleCellProvider {
+  private static class ReseirvorSingleRoleHandler_udgfna_i0 extends SingleRoleCellProvider {
     @NotNull
     private SNode myNode;
 
-    public ReseirvorSingleRoleHandler_oir5qa_i0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+    public ReseirvorSingleRoleHandler_udgfna_i0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(containmentLink, context);
       myNode = ownerNode;
     }
@@ -299,7 +297,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
   }
   private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "DrillingOperation:");
-    editorCell.setCellId("Constant_oir5qa_j0");
+    editorCell.setCellId("Constant_udgfna_j0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -307,14 +305,14 @@ import org.jetbrains.mps.openapi.language.SConcept;
     return editorCell;
   }
   private EditorCell createRefNode_1() {
-    SingleRoleCellProvider provider = new DrillingOperationSingleRoleHandler_oir5qa_k0(myNode, LINKS.DrillingOperation$K00Q, getEditorContext());
+    SingleRoleCellProvider provider = new DrillingOperationSingleRoleHandler_udgfna_k0(myNode, LINKS.DrillingOperation$K00Q, getEditorContext());
     return provider.createCell();
   }
-  private static class DrillingOperationSingleRoleHandler_oir5qa_k0 extends SingleRoleCellProvider {
+  private static class DrillingOperationSingleRoleHandler_udgfna_k0 extends SingleRoleCellProvider {
     @NotNull
     private SNode myNode;
 
-    public DrillingOperationSingleRoleHandler_oir5qa_k0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+    public DrillingOperationSingleRoleHandler_udgfna_k0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(containmentLink, context);
       myNode = ownerNode;
     }
@@ -367,7 +365,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
   }
   private EditorCell createConstant_2() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Coordinates:");
-    editorCell.setCellId("Constant_oir5qa_l0");
+    editorCell.setCellId("Constant_udgfna_l0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -375,14 +373,14 @@ import org.jetbrains.mps.openapi.language.SConcept;
     return editorCell;
   }
   private EditorCell createRefNode_2() {
-    SingleRoleCellProvider provider = new CoordinatesSingleRoleHandler_oir5qa_m0(myNode, LINKS.Coordinates$JU9t, getEditorContext());
+    SingleRoleCellProvider provider = new CoordinatesSingleRoleHandler_udgfna_m0(myNode, LINKS.Coordinates$JU9t, getEditorContext());
     return provider.createCell();
   }
-  private static class CoordinatesSingleRoleHandler_oir5qa_m0 extends SingleRoleCellProvider {
+  private static class CoordinatesSingleRoleHandler_udgfna_m0 extends SingleRoleCellProvider {
     @NotNull
     private SNode myNode;
 
-    public CoordinatesSingleRoleHandler_oir5qa_m0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+    public CoordinatesSingleRoleHandler_udgfna_m0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(containmentLink, context);
       myNode = ownerNode;
     }
@@ -435,7 +433,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
   }
   private EditorCell createConstant_3() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "WellHeadType:");
-    editorCell.setCellId("Constant_oir5qa_n0");
+    editorCell.setCellId("Constant_udgfna_n0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -443,14 +441,14 @@ import org.jetbrains.mps.openapi.language.SConcept;
     return editorCell;
   }
   private EditorCell createRefNode_3() {
-    SingleRoleCellProvider provider = new WellHeadTypeSingleRoleHandler_oir5qa_o0(myNode, LINKS.WellHeadType$JTFr, getEditorContext());
+    SingleRoleCellProvider provider = new WellHeadTypeSingleRoleHandler_udgfna_o0(myNode, LINKS.WellHeadType$JTFr, getEditorContext());
     return provider.createCell();
   }
-  private static class WellHeadTypeSingleRoleHandler_oir5qa_o0 extends SingleRoleCellProvider {
+  private static class WellHeadTypeSingleRoleHandler_udgfna_o0 extends SingleRoleCellProvider {
     @NotNull
     private SNode myNode;
 
-    public WellHeadTypeSingleRoleHandler_oir5qa_o0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+    public WellHeadTypeSingleRoleHandler_udgfna_o0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(containmentLink, context);
       myNode = ownerNode;
     }
@@ -501,74 +499,6 @@ import org.jetbrains.mps.openapi.language.SConcept;
       return "<no WellHeadType>";
     }
   }
-  private EditorCell createConstant_4() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "ProductionType:");
-    editorCell.setCellId("Constant_oir5qa_p0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createRefNode_4() {
-    SingleRoleCellProvider provider = new ProductionTypeSingleRoleHandler_oir5qa_q0(myNode, LINKS.ProductionType$P5Uf, getEditorContext());
-    return provider.createCell();
-  }
-  private static class ProductionTypeSingleRoleHandler_oir5qa_q0 extends SingleRoleCellProvider {
-    @NotNull
-    private SNode myNode;
-
-    public ProductionTypeSingleRoleHandler_oir5qa_q0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(containmentLink, context);
-      myNode = ownerNode;
-    }
-
-    @Override
-    @NotNull
-    public SNode getNode() {
-      return myNode;
-    }
-
-    protected EditorCell createChildCell(SNode child) {
-      EditorCell editorCell = getUpdateSession().updateChildNodeCell(child);
-      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(getNode(), LINKS.ProductionType$P5Uf, child));
-      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(getNode(), LINKS.ProductionType$P5Uf, child));
-      installCellInfo(child, editorCell, false);
-      return editorCell;
-    }
-
-
-
-    private void installCellInfo(SNode child, EditorCell editorCell, boolean isEmpty) {
-      if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo((isEmpty ? new SEmptyContainmentSubstituteInfo(editorCell) : new SChildSubstituteInfo(editorCell)));
-      }
-      if (editorCell.getSRole() == null) {
-        editorCell.setSRole(LINKS.ProductionType$P5Uf);
-      }
-      Style style = new StyleImpl();
-      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-      editorCell.getStyle().putAll(style);
-    }
-    @Override
-    protected EditorCell createEmptyCell() {
-      getCellFactory().pushCellContext();
-      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(getNode(), LINKS.ProductionType$P5Uf));
-      try {
-        EditorCell editorCell = super.createEmptyCell();
-        editorCell.setCellId("empty_ProductionType");
-        installCellInfo(null, editorCell, true);
-        setCellContext(editorCell);
-        return editorCell;
-      } finally {
-        getCellFactory().popCellContext();
-      }
-    }
-    protected String getNoTargetText() {
-      return "<no ProductionType>";
-    }
-  }
 
   private static final class PROPS {
     /*package*/ static final SProperty name$MnvL = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
@@ -576,8 +506,8 @@ import org.jetbrains.mps.openapi.language.SConcept;
     /*package*/ static final SProperty pipeSize$K7Kn = MetaAdapterFactory.getProperty(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x5978c60a757d5133L, 0x3d848a6e7457c43eL, "pipeSize");
     /*package*/ static final SProperty pressure$K8Vs = MetaAdapterFactory.getProperty(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x5978c60a757d5133L, 0x3d848a6e7457c443L, "pressure");
     /*package*/ static final SProperty temperature$KfIT = MetaAdapterFactory.getProperty(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x5978c60a757d5133L, 0x3d848a6e7457c44bL, "temperature");
-    /*package*/ static final SProperty productionType$qEx1 = MetaAdapterFactory.getProperty(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x7b5c7fc646f34c34L, 0x740a9055b2063644L, "productionType");
-    /*package*/ static final SProperty bpd$t9mA = MetaAdapterFactory.getProperty(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x7b5c7fc646f34c34L, 0x740a9055b2063649L, "bpd");
+    /*package*/ static final SProperty depthPressure$H1zy = MetaAdapterFactory.getProperty(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x7b5c7fc646f34c22L, 0x4cde0cd118743694L, "depthPressure");
+    /*package*/ static final SProperty temperaturePressure$H7DW = MetaAdapterFactory.getProperty(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x7b5c7fc646f34c22L, 0x4cde0cd118743699L, "temperaturePressure");
   }
 
   private static final class CONCEPTS {
@@ -589,6 +519,5 @@ import org.jetbrains.mps.openapi.language.SConcept;
     /*package*/ static final SContainmentLink DrillingOperation$K00Q = MetaAdapterFactory.getContainmentLink(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x5978c60a757d5133L, 0x3d848a6e7457c432L, "DrillingOperation");
     /*package*/ static final SContainmentLink Coordinates$JU9t = MetaAdapterFactory.getContainmentLink(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x5978c60a757d5133L, 0x3d848a6e7457c42eL, "Coordinates");
     /*package*/ static final SContainmentLink WellHeadType$JTFr = MetaAdapterFactory.getContainmentLink(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x5978c60a757d5133L, 0x3d848a6e7457c42cL, "WellHeadType");
-    /*package*/ static final SContainmentLink ProductionType$P5Uf = MetaAdapterFactory.getContainmentLink(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x7b5c7fc646f34c34L, 0x740a9055b20726a5L, "ProductionType");
   }
 }

@@ -9,17 +9,24 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
+  private ConceptPresentation props_AlsProductionWell;
+  private ConceptPresentation props_AlsType;
+  private ConceptPresentation props_CarbonateReservoirType;
   private ConceptPresentation props_Coordinates;
+  private ConceptPresentation props_DepositWell;
   private ConceptPresentation props_DesignerWell;
   private ConceptPresentation props_DrillingOperation;
-  private ConceptPresentation props_ExplorationWell;
+  private ConceptPresentation props_ExploratoryWell;
   private ConceptPresentation props_HorizontalWell;
   private ConceptPresentation props_InjectionType;
   private ConceptPresentation props_InjectionWell;
   private ConceptPresentation props_MultilateralWell;
   private ConceptPresentation props_ProductionType;
   private ConceptPresentation props_ProductionWell;
+  private ConceptPresentation props_Reservoir;
+  private ConceptPresentation props_ReservoirType;
   private ConceptPresentation props_ReservoriWell;
+  private ConceptPresentation props_SiliciclasticReservoirType;
   private ConceptPresentation props_Well;
   private ConceptPresentation props_WellHeadType;
 
@@ -28,6 +35,27 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.AlsProductionWell:
+        if (props_AlsProductionWell == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("AlsProductionWell");
+          props_AlsProductionWell = cpb.create();
+        }
+        return props_AlsProductionWell;
+      case LanguageConceptSwitch.AlsType:
+        if (props_AlsType == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("AlsType");
+          props_AlsType = cpb.create();
+        }
+        return props_AlsType;
+      case LanguageConceptSwitch.CarbonateReservoirType:
+        if (props_CarbonateReservoirType == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("CarbonateReservoirType");
+          props_CarbonateReservoirType = cpb.create();
+        }
+        return props_CarbonateReservoirType;
       case LanguageConceptSwitch.Coordinates:
         if (props_Coordinates == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -35,6 +63,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Coordinates = cpb.create();
         }
         return props_Coordinates;
+      case LanguageConceptSwitch.DepositWell:
+        if (props_DepositWell == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
+          props_DepositWell = cpb.create();
+        }
+        return props_DepositWell;
       case LanguageConceptSwitch.DesignerWell:
         if (props_DesignerWell == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -49,13 +84,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_DrillingOperation = cpb.create();
         }
         return props_DrillingOperation;
-      case LanguageConceptSwitch.ExplorationWell:
-        if (props_ExplorationWell == null) {
+      case LanguageConceptSwitch.ExploratoryWell:
+        if (props_ExploratoryWell == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
-          props_ExplorationWell = cpb.create();
+          props_ExploratoryWell = cpb.create();
         }
-        return props_ExplorationWell;
+        return props_ExploratoryWell;
       case LanguageConceptSwitch.HorizontalWell:
         if (props_HorizontalWell == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -98,6 +133,20 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_ProductionWell = cpb.create();
         }
         return props_ProductionWell;
+      case LanguageConceptSwitch.Reservoir:
+        if (props_Reservoir == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Reservoir");
+          props_Reservoir = cpb.create();
+        }
+        return props_Reservoir;
+      case LanguageConceptSwitch.ReservoirType:
+        if (props_ReservoirType == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ReservoirType");
+          props_ReservoirType = cpb.create();
+        }
+        return props_ReservoirType;
       case LanguageConceptSwitch.ReservoriWell:
         if (props_ReservoriWell == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -105,6 +154,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_ReservoriWell = cpb.create();
         }
         return props_ReservoriWell;
+      case LanguageConceptSwitch.SiliciclasticReservoirType:
+        if (props_SiliciclasticReservoirType == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("SiliciclasticReservoirType");
+          props_SiliciclasticReservoirType = cpb.create();
+        }
+        return props_SiliciclasticReservoirType;
       case LanguageConceptSwitch.Well:
         if (props_Well == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
