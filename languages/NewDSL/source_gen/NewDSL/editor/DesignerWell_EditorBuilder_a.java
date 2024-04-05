@@ -32,11 +32,11 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SConcept;
 
-/*package*/ class ExplorationWell_EditorBuilder_a extends AbstractEditorBuilder {
+/*package*/ class DesignerWell_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
   private SNode myNode;
 
-  public ExplorationWell_EditorBuilder_a(@NotNull EditorContext context, @NotNull SNode node) {
+  public DesignerWell_EditorBuilder_a(@NotNull EditorContext context, @NotNull SNode node) {
     super(context);
     myNode = node;
   }
@@ -53,7 +53,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
 
   private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
-    editorCell.setCellId("Collection_fh87bh_a");
+    editorCell.setCellId("Collection_4tnxmx_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
     editorCell.addEditorCell(createProperty_0());
@@ -62,7 +62,6 @@ import org.jetbrains.mps.openapi.language.SConcept;
     editorCell.addEditorCell(createProperty_3());
     editorCell.addEditorCell(createProperty_4());
     editorCell.addEditorCell(createProperty_5());
-    editorCell.addEditorCell(createProperty_6());
     editorCell.addEditorCell(createRefNode_0());
     editorCell.addEditorCell(createRefNode_1());
     editorCell.addEditorCell(createRefNode_2());
@@ -176,32 +175,11 @@ import org.jetbrains.mps.openapi.language.SConcept;
   private EditorCell createProperty_5() {
     getCellFactory().pushCellContext();
     try {
-      final SProperty property = PROPS.depthPressure$H1zy;
+      final SProperty property = PROPS.targets$p9$r;
       getCellFactory().setPropertyInfo(new SPropertyInfo(myNode, property));
       EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new SPropertyAccessor(myNode, property, false, false), myNode);
-      editorCell.setDefaultText("<no depthPressure>");
-      editorCell.setCellId("property_depthPressure");
-      editorCell.setSubstituteInfo(new SPropertySubstituteInfo(editorCell, property));
-      setCellContext(editorCell);
-      Iterable<SNode> propertyAttributes = SNodeOperations.ofConcept(new IAttributeDescriptor.AllAttributes().list(myNode), CONCEPTS.PropertyAttribute$Gb);
-      Iterable<SNode> currentPropertyAttributes = Sequence.fromIterable(propertyAttributes).where((it) -> Objects.equals(PropertyAttribute__BehaviorDescriptor.getProperty_id1avfQ4BBzOo.invoke(it), property));
-      if (Sequence.fromIterable(currentPropertyAttributes).isNotEmpty()) {
-        EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
-        return manager.createNodeRoleAttributeCell(Sequence.fromIterable(currentPropertyAttributes).first(), AttributeKind.PROPERTY, editorCell);
-      } else
-      return editorCell;
-    } finally {
-      getCellFactory().popCellContext();
-    }
-  }
-  private EditorCell createProperty_6() {
-    getCellFactory().pushCellContext();
-    try {
-      final SProperty property = PROPS.temperaturePressure$H7DW;
-      getCellFactory().setPropertyInfo(new SPropertyInfo(myNode, property));
-      EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new SPropertyAccessor(myNode, property, false, false), myNode);
-      editorCell.setDefaultText("<no temperaturePressure>");
-      editorCell.setCellId("property_temperaturePressure");
+      editorCell.setDefaultText("<no targets>");
+      editorCell.setCellId("property_targets");
       editorCell.setSubstituteInfo(new SPropertySubstituteInfo(editorCell, property));
       setCellContext(editorCell);
       Iterable<SNode> propertyAttributes = SNodeOperations.ofConcept(new IAttributeDescriptor.AllAttributes().list(myNode), CONCEPTS.PropertyAttribute$Gb);
@@ -216,14 +194,14 @@ import org.jetbrains.mps.openapi.language.SConcept;
     }
   }
   private EditorCell createRefNode_0() {
-    SingleRoleCellProvider provider = new WellHeadTyoeSingleRoleHandler_fh87bh_h0(myNode, LINKS.WellHeadTyoe$JTFr, getEditorContext());
+    SingleRoleCellProvider provider = new WellHeadTyoeSingleRoleHandler_4tnxmx_g0(myNode, LINKS.WellHeadTyoe$JTFr, getEditorContext());
     return provider.createCell();
   }
-  private static class WellHeadTyoeSingleRoleHandler_fh87bh_h0 extends SingleRoleCellProvider {
+  private static class WellHeadTyoeSingleRoleHandler_4tnxmx_g0 extends SingleRoleCellProvider {
     @NotNull
     private SNode myNode;
 
-    public WellHeadTyoeSingleRoleHandler_fh87bh_h0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+    public WellHeadTyoeSingleRoleHandler_4tnxmx_g0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(containmentLink, context);
       myNode = ownerNode;
     }
@@ -271,14 +249,14 @@ import org.jetbrains.mps.openapi.language.SConcept;
     }
   }
   private EditorCell createRefNode_1() {
-    SingleRoleCellProvider provider = new CoordinatesSingleRoleHandler_fh87bh_i0(myNode, LINKS.Coordinates$JU9t, getEditorContext());
+    SingleRoleCellProvider provider = new CoordinatesSingleRoleHandler_4tnxmx_h0(myNode, LINKS.Coordinates$JU9t, getEditorContext());
     return provider.createCell();
   }
-  private static class CoordinatesSingleRoleHandler_fh87bh_i0 extends SingleRoleCellProvider {
+  private static class CoordinatesSingleRoleHandler_4tnxmx_h0 extends SingleRoleCellProvider {
     @NotNull
     private SNode myNode;
 
-    public CoordinatesSingleRoleHandler_fh87bh_i0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+    public CoordinatesSingleRoleHandler_4tnxmx_h0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(containmentLink, context);
       myNode = ownerNode;
     }
@@ -326,14 +304,14 @@ import org.jetbrains.mps.openapi.language.SConcept;
     }
   }
   private EditorCell createRefNode_2() {
-    SingleRoleCellProvider provider = new DrillingOperationSingleRoleHandler_fh87bh_j0(myNode, LINKS.DrillingOperation$K00Q, getEditorContext());
+    SingleRoleCellProvider provider = new DrillingOperationSingleRoleHandler_4tnxmx_i0(myNode, LINKS.DrillingOperation$K00Q, getEditorContext());
     return provider.createCell();
   }
-  private static class DrillingOperationSingleRoleHandler_fh87bh_j0 extends SingleRoleCellProvider {
+  private static class DrillingOperationSingleRoleHandler_4tnxmx_i0 extends SingleRoleCellProvider {
     @NotNull
     private SNode myNode;
 
-    public DrillingOperationSingleRoleHandler_fh87bh_j0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+    public DrillingOperationSingleRoleHandler_4tnxmx_i0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(containmentLink, context);
       myNode = ownerNode;
     }
@@ -387,8 +365,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     /*package*/ static final SProperty pipeSize$K7Kn = MetaAdapterFactory.getProperty(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x5978c60a757d5133L, 0x3d848a6e7457c43eL, "pipeSize");
     /*package*/ static final SProperty pressure$K8Vs = MetaAdapterFactory.getProperty(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x5978c60a757d5133L, 0x3d848a6e7457c443L, "pressure");
     /*package*/ static final SProperty temperature$KfIT = MetaAdapterFactory.getProperty(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x5978c60a757d5133L, 0x3d848a6e7457c44bL, "temperature");
-    /*package*/ static final SProperty depthPressure$H1zy = MetaAdapterFactory.getProperty(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x7b5c7fc646f34c22L, 0x4cde0cd118743694L, "depthPressure");
-    /*package*/ static final SProperty temperaturePressure$H7DW = MetaAdapterFactory.getProperty(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x7b5c7fc646f34c22L, 0x4cde0cd118743699L, "temperaturePressure");
+    /*package*/ static final SProperty targets$p9$r = MetaAdapterFactory.getProperty(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2fba2edb99362035L, 0x4cde0cd1187a2b47L, "targets");
   }
 
   private static final class CONCEPTS {

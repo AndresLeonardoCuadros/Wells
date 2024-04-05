@@ -24,6 +24,7 @@
         <child id="1073389446424" name="childCellModel" index="3EZMnx" />
       </concept>
       <concept id="1073389658414" name="jetbrains.mps.lang.editor.structure.CellModel_Property" flags="sg" stub="730538219796134133" index="3F0A7n" />
+      <concept id="1073389882823" name="jetbrains.mps.lang.editor.structure.CellModel_RefNode" flags="sg" stub="730538219795960754" index="3F1sOY" />
       <concept id="1166049232041" name="jetbrains.mps.lang.editor.structure.AbstractComponent" flags="ng" index="1XWOmA">
         <reference id="1166049300910" name="conceptDeclaration" index="1XX52x" />
       </concept>
@@ -42,6 +43,33 @@
       <node concept="3F0A7n" id="4Nu3d4ot3qB" role="3EZMnx">
         <ref role="1NtTu8" to="7zo2:7HsvWp6WnxE" resolve="Name" />
       </node>
+      <node concept="3F0A7n" id="4Nu3d4ot3qH" role="3EZMnx">
+        <ref role="1NtTu8" to="7zo2:3Q4yATOlWgS" resolve="casingSize" />
+      </node>
+      <node concept="3F0A7n" id="4Nu3d4ot3qP" role="3EZMnx">
+        <ref role="1NtTu8" to="7zo2:3Q4yATOlWgY" resolve="pipeSize" />
+      </node>
+      <node concept="3F0A7n" id="4Nu3d4ot3qZ" role="3EZMnx">
+        <ref role="1NtTu8" to="7zo2:3Q4yATOlWh3" resolve="pressure" />
+      </node>
+      <node concept="3F0A7n" id="4Nu3d4ot3rb" role="3EZMnx">
+        <ref role="1NtTu8" to="7zo2:3Q4yATOlWhb" resolve="temperature" />
+      </node>
+      <node concept="3F0A7n" id="4Nu3d4ot3rp" role="3EZMnx">
+        <ref role="1NtTu8" to="7zo2:4Nu3d4ot3qk" resolve="depthPressure" />
+      </node>
+      <node concept="3F0A7n" id="4Nu3d4ot3rD" role="3EZMnx">
+        <ref role="1NtTu8" to="7zo2:4Nu3d4ot3qp" resolve="temperaturePressure" />
+      </node>
+      <node concept="3F1sOY" id="4Nu3d4ot3rV" role="3EZMnx">
+        <ref role="1NtTu8" to="7zo2:3Q4yATOlWgG" resolve="WellHeadTyoe" />
+      </node>
+      <node concept="3F1sOY" id="4Nu3d4ot3sg" role="3EZMnx">
+        <ref role="1NtTu8" to="7zo2:3Q4yATOlWgI" resolve="Coordinates" />
+      </node>
+      <node concept="3F1sOY" id="4Nu3d4ot3sA" role="3EZMnx">
+        <ref role="1NtTu8" to="7zo2:3Q4yATOlWgM" resolve="DrillingOperation" />
+      </node>
     </node>
   </node>
   <node concept="24kQdi" id="mJveRCrM6G">
@@ -54,6 +82,39 @@
     <ref role="1XX52x" to="7zo2:7HsvWp6WOKS" resolve="ReservoriWell" />
     <node concept="3F0A7n" id="mJveRCrM6T" role="2wV5jI">
       <ref role="1NtTu8" to="7zo2:7HsvWp6WnxE" resolve="Name" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="4Nu3d4ouyGz">
+    <ref role="1XX52x" to="7zo2:2YUbHIpdy0P" resolve="DesignerWell" />
+    <node concept="3EZMnI" id="4Nu3d4ouyG_" role="2wV5jI">
+      <node concept="2iRkQZ" id="4Nu3d4ouyGA" role="2iSdaV" />
+      <node concept="3F0A7n" id="4Nu3d4ouyGB" role="3EZMnx">
+        <ref role="1NtTu8" to="7zo2:7HsvWp6WnxE" resolve="Name" />
+      </node>
+      <node concept="3F0A7n" id="4Nu3d4ouyGC" role="3EZMnx">
+        <ref role="1NtTu8" to="7zo2:3Q4yATOlWgS" resolve="casingSize" />
+      </node>
+      <node concept="3F0A7n" id="4Nu3d4ouyGD" role="3EZMnx">
+        <ref role="1NtTu8" to="7zo2:3Q4yATOlWgY" resolve="pipeSize" />
+      </node>
+      <node concept="3F0A7n" id="4Nu3d4ouyGE" role="3EZMnx">
+        <ref role="1NtTu8" to="7zo2:3Q4yATOlWh3" resolve="pressure" />
+      </node>
+      <node concept="3F0A7n" id="4Nu3d4ouyGF" role="3EZMnx">
+        <ref role="1NtTu8" to="7zo2:3Q4yATOlWhb" resolve="temperature" />
+      </node>
+      <node concept="3F0A7n" id="4Nu3d4ouyGG" role="3EZMnx">
+        <ref role="1NtTu8" to="7zo2:4Nu3d4ouyH7" resolve="targets" />
+      </node>
+      <node concept="3F1sOY" id="4Nu3d4ouyGI" role="3EZMnx">
+        <ref role="1NtTu8" to="7zo2:3Q4yATOlWgG" resolve="WellHeadTyoe" />
+      </node>
+      <node concept="3F1sOY" id="4Nu3d4ouyGJ" role="3EZMnx">
+        <ref role="1NtTu8" to="7zo2:3Q4yATOlWgI" resolve="Coordinates" />
+      </node>
+      <node concept="3F1sOY" id="4Nu3d4ouyGK" role="3EZMnx">
+        <ref role="1NtTu8" to="7zo2:3Q4yATOlWgM" resolve="DrillingOperation" />
+      </node>
     </node>
   </node>
 </model>

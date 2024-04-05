@@ -14,8 +14,10 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_DrillingOperation;
   private ConceptPresentation props_ExplorationWell;
   private ConceptPresentation props_HorizontalWell;
+  private ConceptPresentation props_InjectionType;
   private ConceptPresentation props_InjectionWell;
   private ConceptPresentation props_MultilateralWell;
+  private ConceptPresentation props_ProductionType;
   private ConceptPresentation props_ProductionWell;
   private ConceptPresentation props_ReservoriWell;
   private ConceptPresentation props_Well;
@@ -29,6 +31,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Coordinates:
         if (props_Coordinates == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Coordinates");
           props_Coordinates = cpb.create();
         }
         return props_Coordinates;
@@ -60,6 +63,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_HorizontalWell = cpb.create();
         }
         return props_HorizontalWell;
+      case LanguageConceptSwitch.InjectionType:
+        if (props_InjectionType == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("InjectionType");
+          props_InjectionType = cpb.create();
+        }
+        return props_InjectionType;
       case LanguageConceptSwitch.InjectionWell:
         if (props_InjectionWell == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -74,6 +84,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_MultilateralWell = cpb.create();
         }
         return props_MultilateralWell;
+      case LanguageConceptSwitch.ProductionType:
+        if (props_ProductionType == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ProductionType");
+          props_ProductionType = cpb.create();
+        }
+        return props_ProductionType;
       case LanguageConceptSwitch.ProductionWell:
         if (props_ProductionWell == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

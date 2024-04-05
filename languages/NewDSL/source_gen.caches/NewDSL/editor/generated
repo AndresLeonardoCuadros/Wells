@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="dnr0vcrmbjhoep3bl63cbwlr2rwwjjp">
-  <files names="EditorAspectDescriptorImpl.java:ExplorationWell_Editor.java:ExplorationWell_EditorBuilder_a.java:InjectionWell_Editor.java:InjectionWell_EditorBuilder_a.java:ProductionWell_Editor.java:ProductionWell_EditorBuilder_a.java:ReservoriWell_Editor.java:ReservoriWell_EditorBuilder_a.java" />
+<product version="3" modelHash="4bq5mfeu9rnulqdfybnnb38r0p7i2e1">
+  <files names="DesignerWell_Editor.java:DesignerWell_EditorBuilder_a.java:EditorAspectDescriptorImpl.java:ExplorationWell_Editor.java:ExplorationWell_EditorBuilder_a.java:InjectionWell_Editor.java:InjectionWell_EditorBuilder_a.java:ProductionWell_Editor.java:ProductionWell_EditorBuilder_a.java:ReservoriWell_Editor.java:ReservoriWell_EditorBuilder_a.java" />
 </product>
 

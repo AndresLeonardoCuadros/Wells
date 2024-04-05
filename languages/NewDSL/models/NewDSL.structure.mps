@@ -171,7 +171,6 @@
   </node>
   <node concept="1TIwiD" id="7HsvWp6WOKY">
     <property role="EcuMT" value="8889120254093118526" />
-    <property role="R5$K7" value="true" />
     <property role="TrG5h" value="Coordinates" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" />
     <node concept="1TJgyi" id="7HsvWp6WOL3" role="1TKVEl">
@@ -256,6 +255,11 @@
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="7HsvWp6WOKY" resolve="Coordinates" />
     </node>
+    <node concept="1TJgyi" id="4Nu3d4ouyH7" role="1TKVEl">
+      <property role="IQ2nx" value="5538878683910646599" />
+      <property role="TrG5h" value="targets" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
   </node>
   <node concept="1TIwiD" id="2YUbHIpdy0V">
     <property role="EcuMT" value="3439112786153971771" />
@@ -299,6 +303,21 @@
   <node concept="1TIwiD" id="4Nu3d4ot3mt">
     <property role="EcuMT" value="5538878683910256029" />
     <property role="TrG5h" value="ProductionType" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="1TJgyi" id="4Nu3d4ovkfZ" role="1TKVEl">
+      <property role="IQ2nx" value="5538878683910849535" />
+      <property role="TrG5h" value="naturalFlow" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="4Nu3d4ovkg3" role="1TKVEl">
+      <property role="IQ2nx" value="5538878683910849539" />
+      <property role="TrG5h" value="alsProductionwell" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7ga$5mM1zoz">
+    <property role="EcuMT" value="8361654355900118563" />
+    <property role="TrG5h" value="DepositWell" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" />
   </node>
 </model>

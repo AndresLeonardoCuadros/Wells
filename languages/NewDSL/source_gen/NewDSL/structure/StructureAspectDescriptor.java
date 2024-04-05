@@ -18,8 +18,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptDrillingOperation = createDescriptorForDrillingOperation();
   /*package*/ final ConceptDescriptor myConceptExplorationWell = createDescriptorForExplorationWell();
   /*package*/ final ConceptDescriptor myConceptHorizontalWell = createDescriptorForHorizontalWell();
+  /*package*/ final ConceptDescriptor myConceptInjectionType = createDescriptorForInjectionType();
   /*package*/ final ConceptDescriptor myConceptInjectionWell = createDescriptorForInjectionWell();
   /*package*/ final ConceptDescriptor myConceptMultilateralWell = createDescriptorForMultilateralWell();
+  /*package*/ final ConceptDescriptor myConceptProductionType = createDescriptorForProductionType();
   /*package*/ final ConceptDescriptor myConceptProductionWell = createDescriptorForProductionWell();
   /*package*/ final ConceptDescriptor myConceptReservoriWell = createDescriptorForReservoriWell();
   /*package*/ final ConceptDescriptor myConceptWell = createDescriptorForWell();
@@ -38,7 +40,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptCoordinates, myConceptDesignerWell, myConceptDrillingOperation, myConceptExplorationWell, myConceptHorizontalWell, myConceptInjectionWell, myConceptMultilateralWell, myConceptProductionWell, myConceptReservoriWell, myConceptWell, myConceptWellHeadType);
+    return Arrays.asList(myConceptCoordinates, myConceptDesignerWell, myConceptDrillingOperation, myConceptExplorationWell, myConceptHorizontalWell, myConceptInjectionType, myConceptInjectionWell, myConceptMultilateralWell, myConceptProductionType, myConceptProductionWell, myConceptReservoriWell, myConceptWell, myConceptWellHeadType);
   }
 
   @Override
@@ -55,10 +57,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptExplorationWell;
       case LanguageConceptSwitch.HorizontalWell:
         return myConceptHorizontalWell;
+      case LanguageConceptSwitch.InjectionType:
+        return myConceptInjectionType;
       case LanguageConceptSwitch.InjectionWell:
         return myConceptInjectionWell;
       case LanguageConceptSwitch.MultilateralWell:
         return myConceptMultilateralWell;
+      case LanguageConceptSwitch.ProductionType:
+        return myConceptProductionType;
       case LanguageConceptSwitch.ProductionWell:
         return myConceptProductionWell;
       case LanguageConceptSwitch.ReservoriWell:
@@ -79,7 +85,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   private static ConceptDescriptor createDescriptorForCoordinates() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewDSL", "Coordinates", 0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x7b5c7fc646f34c3eL);
-    b.class_(false, true, false);
+    b.class_(false, false, false);
     b.origin("r:c2e19f41-b779-4566-b6a0-4e4349db4a36(NewDSL.structure)/8889120254093118526");
     b.version(3);
     b.property("latitude", 0x7b5c7fc646f34c43L).type(PrimitiveTypeId.INTEGER).origin("8889120254093118531").done();
@@ -95,6 +101,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:c2e19f41-b779-4566-b6a0-4e4349db4a36(NewDSL.structure)/3439112786153971765");
     b.version(3);
+    b.property("targets", 0x4cde0cd1187a2b47L).type(PrimitiveTypeId.STRING).origin("5538878683910646599").done();
     b.aggregate("location", 0x2fba2edb99362038L).target(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x7b5c7fc646f34c3eL).optional(false).ordered(true).multiple(false).origin("3439112786153971768").done();
     return b.create();
   }
@@ -115,7 +122,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:c2e19f41-b779-4566-b6a0-4e4349db4a36(NewDSL.structure)/8889120254093118498");
     b.version(3);
-    b.aggregate("Location", 0x7b5c7fc646f34c4eL).target(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x7b5c7fc646f34c3eL).optional(false).ordered(true).multiple(false).origin("8889120254093118542").done();
+    b.property("depthPressure", 0x4cde0cd118743694L).type(PrimitiveTypeId.INTEGER).origin("5538878683910256276").done();
+    b.property("temperaturePressure", 0x4cde0cd118743699L).type(PrimitiveTypeId.INTEGER).origin("5538878683910256281").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForHorizontalWell() {
@@ -127,6 +135,16 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:c2e19f41-b779-4566-b6a0-4e4349db4a36(NewDSL.structure)/3439112786153971771");
     b.version(3);
     b.aggregate("location", 0x2fba2edb9936203eL).target(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x7b5c7fc646f34c3eL).optional(false).ordered(true).multiple(false).origin("3439112786153971774").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForInjectionType() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewDSL", "InjectionType", 0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x4cde0cd11874358bL);
+    b.class_(false, false, false);
+    b.origin("r:c2e19f41-b779-4566-b6a0-4e4349db4a36(NewDSL.structure)/5538878683910256011");
+    b.version(3);
+    b.property("vapor", 0x4cde0cd118743590L).type(PrimitiveTypeId.INTEGER).origin("5538878683910256016").done();
+    b.property("water", 0x4cde0cd118743593L).type(PrimitiveTypeId.INTEGER).origin("5538878683910256019").done();
+    b.property("gas", 0x4cde0cd118743597L).type(PrimitiveTypeId.INTEGER).origin("5538878683910256023").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForInjectionWell() {
@@ -150,6 +168,15 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:c2e19f41-b779-4566-b6a0-4e4349db4a36(NewDSL.structure)/3439112786153971758");
     b.version(3);
     b.aggregate("location", 0x2fba2edb99362032L).target(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x7b5c7fc646f34c3eL).optional(false).ordered(true).multiple(false).origin("3439112786153971762").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForProductionType() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewDSL", "ProductionType", 0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x4cde0cd11874359dL);
+    b.class_(false, false, false);
+    b.origin("r:c2e19f41-b779-4566-b6a0-4e4349db4a36(NewDSL.structure)/5538878683910256029");
+    b.version(3);
+    b.property("naturalFlow", 0x4cde0cd1187d43ffL).type(PrimitiveTypeId.STRING).origin("5538878683910849535").done();
+    b.property("alsProductionwell", 0x4cde0cd1187d4403L).type(PrimitiveTypeId.INTEGER).origin("5538878683910849539").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForProductionWell() {
