@@ -36,14 +36,8 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
-      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
-        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
-      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ngI" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
-      </concept>
-      <concept id="779128492853369165" name="jetbrains.mps.lang.core.structure.SideTransformInfo" flags="ng" index="1KehLL">
-        <property id="779128492853934523" name="cellId" index="1K8rM7" />
       </concept>
     </language>
   </registry>
@@ -54,7 +48,7 @@
     <ref role="1TJDcQ" to="tpck:gw2VY9q" />
     <node concept="1TJgyi" id="7HsvWp6WnxE" role="1TKVEl">
       <property role="IQ2nx" value="8889120254092998762" />
-      <property role="TrG5h" value="Name" />
+      <property role="TrG5h" value="name" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
     <node concept="1TJgyi" id="3Q4yATOlWgS" role="1TKVEl">
@@ -80,7 +74,7 @@
     <node concept="1TJgyj" id="3Q4yATOlWgG" role="1TKVEi">
       <property role="IQ2ns" value="4432820140242355244" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="WellHeadTyoe" />
+      <property role="20kJfa" value="WellHeadType" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="3Q4yATOlQVL" resolve="WellHeadType" />
     </node>
@@ -98,10 +92,17 @@
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="3Q4yATOlWgv" resolve="DrillingOperation" />
     </node>
+    <node concept="1TJgyj" id="7ga$5mM1JY9" role="1TKVEi">
+      <property role="IQ2ns" value="8361654355900170121" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="Reseirvor" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="7ga$5mM1JWC" resolve="Reservoir" />
+    </node>
   </node>
   <node concept="1TIwiD" id="7HsvWp6WOKy">
     <property role="EcuMT" value="8889120254093118498" />
-    <property role="TrG5h" value="ExplorationWell" />
+    <property role="TrG5h" value="ExploratoryWell" />
     <property role="19KtqR" value="true" />
     <ref role="1TJDcQ" node="5_SLwDPvl4N" resolve="Well" />
     <node concept="PrWs8" id="7HsvWp6WOKz" role="PzmwI">
@@ -126,15 +127,17 @@
     <node concept="PrWs8" id="7HsvWp6WOKM" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
-    <node concept="1TJgyi" id="3Q4yATOlWhk" role="1TKVEl">
-      <property role="IQ2nx" value="4432820140242355284" />
-      <property role="TrG5h" value="injectionType" />
-      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
-    </node>
     <node concept="1TJgyi" id="3Q4yATOlWho" role="1TKVEl">
       <property role="IQ2nx" value="4432820140242355288" />
       <property role="TrG5h" value="injectionVolume" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyj" id="7ga$5mM1Mw7" role="1TKVEi">
+      <property role="IQ2ns" value="8361654355900180487" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="InjectionType" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="4Nu3d4ot3mb" resolve="InjectionType" />
     </node>
   </node>
   <node concept="1TIwiD" id="7HsvWp6WOKO">
@@ -145,12 +148,22 @@
     <node concept="PrWs8" id="7HsvWp6WOKQ" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
-    <node concept="1TJgyj" id="7HsvWp6WOLq" role="1TKVEi">
-      <property role="IQ2ns" value="8889120254093118554" />
+    <node concept="1TJgyi" id="7ga$5mM1zp4" role="1TKVEl">
+      <property role="IQ2nx" value="8361654355900118596" />
+      <property role="TrG5h" value="productionType" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="7ga$5mM1zp9" role="1TKVEl">
+      <property role="IQ2nx" value="8361654355900118601" />
+      <property role="TrG5h" value="bpd" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyj" id="7ga$5mM1Mq_" role="1TKVEi">
+      <property role="IQ2ns" value="8361654355900180133" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="location" />
+      <property role="20kJfa" value="ProductionType" />
       <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="7HsvWp6WOKY" resolve="Coordinates" />
+      <ref role="20lvS9" node="4Nu3d4ot3mt" resolve="ProductionType" />
     </node>
   </node>
   <node concept="1TIwiD" id="7HsvWp6WOKS">
@@ -160,13 +173,6 @@
     <ref role="1TJDcQ" node="5_SLwDPvl4N" resolve="Well" />
     <node concept="PrWs8" id="7HsvWp6WOKV" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
-    </node>
-    <node concept="1TJgyj" id="7HsvWp6WOLs" role="1TKVEi">
-      <property role="IQ2ns" value="8889120254093118556" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="location" />
-      <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="7HsvWp6WOKY" resolve="Coordinates" />
     </node>
   </node>
   <node concept="1TIwiD" id="7HsvWp6WOKY">
@@ -232,12 +238,10 @@
     <node concept="PrWs8" id="2YUbHIpdy0K" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
-    <node concept="1TJgyj" id="2YUbHIpdy0M" role="1TKVEi">
-      <property role="IQ2ns" value="3439112786153971762" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="location" />
-      <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="7HsvWp6WOKY" resolve="Coordinates" />
+    <node concept="1TJgyi" id="7ga$5mM1zo_" role="1TKVEl">
+      <property role="IQ2nx" value="8361654355900118565" />
+      <property role="TrG5h" value="branches" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
   </node>
   <node concept="1TIwiD" id="2YUbHIpdy0P">
@@ -247,13 +251,6 @@
     <ref role="1TJDcQ" node="5_SLwDPvl4N" resolve="Well" />
     <node concept="PrWs8" id="2YUbHIpdy0Q" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
-    </node>
-    <node concept="1TJgyj" id="2YUbHIpdy0S" role="1TKVEi">
-      <property role="IQ2ns" value="3439112786153971768" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="location" />
-      <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="7HsvWp6WOKY" resolve="Coordinates" />
     </node>
     <node concept="1TJgyi" id="4Nu3d4ouyH7" role="1TKVEl">
       <property role="IQ2nx" value="5538878683910646599" />
@@ -269,15 +266,10 @@
     <node concept="PrWs8" id="2YUbHIpdy0W" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
-    <node concept="1TJgyj" id="2YUbHIpdy0Y" role="1TKVEi">
-      <property role="IQ2ns" value="3439112786153971774" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="location" />
-      <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="7HsvWp6WOKY" resolve="Coordinates" />
-      <node concept="1KehLL" id="2YUbHIpdy11" role="lGtFl">
-        <property role="1K8rM7" value="Constant_6h6dhy_e2a" />
-      </node>
+    <node concept="1TJgyi" id="7ga$5mM1zoD" role="1TKVEl">
+      <property role="IQ2nx" value="8361654355900118569" />
+      <property role="TrG5h" value="drillingAngle" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
   </node>
   <node concept="1TIwiD" id="4Nu3d4ot3mb">
@@ -314,11 +306,200 @@
       <property role="TrG5h" value="alsProductionwell" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
+    <node concept="1TJgyj" id="7ga$5mM1MqD" role="1TKVEi">
+      <property role="IQ2ns" value="8361654355900180137" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="AlsProductionWell" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="7ga$5mM1MqJ" resolve="AlsProductionWell" />
+    </node>
   </node>
   <node concept="1TIwiD" id="7ga$5mM1zoz">
     <property role="EcuMT" value="8361654355900118563" />
     <property role="TrG5h" value="DepositWell" />
+    <property role="19KtqR" value="true" />
+    <ref role="1TJDcQ" node="5_SLwDPvl4N" resolve="Well" />
+    <node concept="PrWs8" id="7ga$5mM1zoJ" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+    <node concept="1TJgyi" id="7ga$5mM1zoQ" role="1TKVEl">
+      <property role="IQ2nx" value="8361654355900118582" />
+      <property role="TrG5h" value="depthPressure" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="7ga$5mM1zoV" role="1TKVEl">
+      <property role="IQ2nx" value="8361654355900118587" />
+      <property role="TrG5h" value="temperaturePressure" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7ga$5mM1JWC">
+    <property role="EcuMT" value="8361654355900170024" />
+    <property role="TrG5h" value="Reservoir" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="1TJgyi" id="7ga$5mM1JWG" role="1TKVEl">
+      <property role="IQ2nx" value="8361654355900170028" />
+      <property role="TrG5h" value="name" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="7ga$5mM1JWJ" role="1TKVEl">
+      <property role="IQ2nx" value="8361654355900170031" />
+      <property role="TrG5h" value="porosity" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="7ga$5mM1JWQ" role="1TKVEl">
+      <property role="IQ2nx" value="8361654355900170038" />
+      <property role="TrG5h" value="permeability" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyj" id="7ga$5mM1JWX" role="1TKVEi">
+      <property role="IQ2ns" value="8361654355900170045" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="reservoirType" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="7ga$5mM1JX4" resolve="ReservoirType" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7ga$5mM1JX4">
+    <property role="EcuMT" value="8361654355900170052" />
+    <property role="TrG5h" value="ReservoirType" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="1TJgyj" id="7ga$5mM1JX8" role="1TKVEi">
+      <property role="IQ2ns" value="8361654355900170056" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="siliciclastic" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="7ga$5mM1JXq" resolve="SiliciclasticReservoirType" />
+    </node>
+    <node concept="1TJgyj" id="7ga$5mM1JXe" role="1TKVEi">
+      <property role="IQ2ns" value="8361654355900170062" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="carbonate" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="7ga$5mM1JYi" resolve="CarbonateReservoirType" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7ga$5mM1JXq">
+    <property role="EcuMT" value="8361654355900170074" />
+    <property role="TrG5h" value="SiliciclasticReservoirType" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="1TJgyi" id="7ga$5mM1JXv" role="1TKVEl">
+      <property role="IQ2nx" value="8361654355900170079" />
+      <property role="TrG5h" value="shallow" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="7ga$5mM1JXy" role="1TKVEl">
+      <property role="IQ2nx" value="8361654355900170082" />
+      <property role="TrG5h" value="deepMarine" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="7ga$5mM1JXD" role="1TKVEl">
+      <property role="IQ2nx" value="8361654355900170089" />
+      <property role="TrG5h" value="lacustrine" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="7ga$5mM1JXJ" role="1TKVEl">
+      <property role="IQ2nx" value="8361654355900170095" />
+      <property role="TrG5h" value="eolian" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="7ga$5mM1JXQ" role="1TKVEl">
+      <property role="IQ2nx" value="8361654355900170102" />
+      <property role="TrG5h" value="fluvial" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="7ga$5mM1JXZ" role="1TKVEl">
+      <property role="IQ2nx" value="8361654355900170111" />
+      <property role="TrG5h" value="deltaic" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7ga$5mM1JYi">
+    <property role="EcuMT" value="8361654355900170130" />
+    <property role="TrG5h" value="CarbonateReservoirType" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="1TJgyi" id="7ga$5mM1JYk" role="1TKVEl">
+      <property role="IQ2nx" value="8361654355900170132" />
+      <property role="TrG5h" value="reef" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="7ga$5mM1JYn" role="1TKVEl">
+      <property role="IQ2nx" value="8361654355900170135" />
+      <property role="TrG5h" value="dolomite" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="7ga$5mM1JYs" role="1TKVEl">
+      <property role="IQ2nx" value="8361654355900170140" />
+      <property role="TrG5h" value="classicLimestone" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="7ga$5mM1JY$" role="1TKVEl">
+      <property role="IQ2nx" value="8361654355900170148" />
+      <property role="TrG5h" value="afalinticLimestone" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7ga$5mM1MqJ">
+    <property role="EcuMT" value="8361654355900180143" />
+    <property role="TrG5h" value="AlsProductionWell" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="1TJgyi" id="7ga$5mM1MqN" role="1TKVEl">
+      <property role="IQ2nx" value="8361654355900180147" />
+      <property role="TrG5h" value="pumpBrand" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="7ga$5mM1MqR" role="1TKVEl">
+      <property role="IQ2nx" value="8361654355900180151" />
+      <property role="TrG5h" value="installedAccessories" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="7ga$5mM1MqY" role="1TKVEl">
+      <property role="IQ2nx" value="8361654355900180158" />
+      <property role="TrG5h" value="pumpSettlementDepth" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyj" id="7ga$5mM1Mra" role="1TKVEi">
+      <property role="IQ2ns" value="8361654355900180170" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="AlsType" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="7ga$5mM1Mrd" resolve="AlsType" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7ga$5mM1Mrd">
+    <property role="EcuMT" value="8361654355900180173" />
+    <property role="TrG5h" value="AlsType" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="1TJgyi" id="7ga$5mM1Mrf" role="1TKVEl">
+      <property role="IQ2nx" value="8361654355900180175" />
+      <property role="TrG5h" value="suckerRodPump" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="7ga$5mM1Mrl" role="1TKVEl">
+      <property role="IQ2nx" value="8361654355900180181" />
+      <property role="TrG5h" value="electricalSubmeriblePump" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="7ga$5mM1Mrt" role="1TKVEl">
+      <property role="IQ2nx" value="8361654355900180189" />
+      <property role="TrG5h" value="pregressiveCavityPump" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="7ga$5mM1MrC" role="1TKVEl">
+      <property role="IQ2nx" value="8361654355900180200" />
+      <property role="TrG5h" value="hydraulicPump" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="7ga$5mM1MrL" role="1TKVEl">
+      <property role="IQ2nx" value="8361654355900180209" />
+      <property role="TrG5h" value="gasLit" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="7ga$5mM1MrT" role="1TKVEl">
+      <property role="IQ2nx" value="8361654355900180217" />
+      <property role="TrG5h" value="plungerLit" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
   </node>
 </model>
 
