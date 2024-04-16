@@ -51,7 +51,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   public void reportDependencies(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.Dependencies deps) {
     deps.extendedLanguage(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, "jetbrains.mps.lang.core");
-    deps.aggregatedLanguage(0xf8b003b890094569L, 0xbf6aa5ebb10d759dL, "OilPP");
   }
 
   @Override
@@ -118,7 +117,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(3);
     b.property("type", 0x2a2f59740f81de45L).type(MetaIdFactory.dataTypeId(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81de21L)).origin("3039746628509621829").done();
     b.property("pumpBrand", 0x2a2f59740f81de47L).type(PrimitiveTypeId.INTEGER).origin("3039746628509621831").done();
-    b.property("pumpSettlementDepth", 0x2a2f59740f81de4bL).type(MetaIdFactory.dataTypeId(0xf8b003b890094569L, 0xbf6aa5ebb10d759dL, 0x2a2f59740f81dd7bL)).origin("3039746628509621835").done();
+    b.property("pumpSettlementDepth", 0x2a2f59740f81de4bL).type(MetaIdFactory.dataTypeId(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81dd7bL)).origin("3039746628509621835").done();
     b.aggregate("accessories", 0x2a2f59740f81de57L).target(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81de50L).optional(true).ordered(true).multiple(true).origin("3039746628509621847").done();
     return b.create();
   }
@@ -137,9 +136,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.origin("r:c2e19f41-b779-4566-b6a0-4e4349db4a36(NewDSL.structure)/3039746628509621650");
     b.version(3);
-    b.property("latitude", 0x2a2f59740f81dd93L).type(MetaIdFactory.dataTypeId(0xf8b003b890094569L, 0xbf6aa5ebb10d759dL, 0x2a2f59740f81dd7bL)).origin("3039746628509621651").done();
-    b.property("longitude", 0x2a2f59740f81dd95L).type(MetaIdFactory.dataTypeId(0xf8b003b890094569L, 0xbf6aa5ebb10d759dL, 0x2a2f59740f81dd7bL)).origin("3039746628509621653").done();
-    b.property("altitude", 0x2a2f59740f81dd98L).type(MetaIdFactory.dataTypeId(0xf8b003b890094569L, 0xbf6aa5ebb10d759dL, 0x2a2f59740f81dd7bL)).origin("3039746628509621656").done();
+    b.property("latitude", 0x2a2f59740f81dd93L).type(MetaIdFactory.dataTypeId(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81dd7bL)).origin("3039746628509621651").done();
+    b.property("longitude", 0x2a2f59740f81dd95L).type(MetaIdFactory.dataTypeId(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81dd7bL)).origin("3039746628509621653").done();
+    b.property("altitude", 0x2a2f59740f81dd98L).type(MetaIdFactory.dataTypeId(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81dd7bL)).origin("3039746628509621656").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForDepositWell() {
@@ -149,8 +148,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81dd67L);
     b.origin("r:c2e19f41-b779-4566-b6a0-4e4349db4a36(NewDSL.structure)/3039746628509621885");
     b.version(3);
-    b.property("depthPressure", 0x2a2f59740f81de83L).type(MetaIdFactory.dataTypeId(0xf8b003b890094569L, 0xbf6aa5ebb10d759dL, 0x2a2f59740f81dd7bL)).origin("3039746628509621891").done();
-    b.property("temperaturePressure", 0x2a2f59740f81de88L).type(MetaIdFactory.dataTypeId(0xf8b003b890094569L, 0xbf6aa5ebb10d759dL, 0x2a2f59740f81dd7bL)).origin("3039746628509621896").done();
+    b.property("depthPressure", 0x2a2f59740f81de83L).type(MetaIdFactory.dataTypeId(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81dd7bL)).origin("3039746628509621891").done();
+    b.property("temperaturePressure", 0x2a2f59740f81de88L).type(MetaIdFactory.dataTypeId(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81dd7bL)).origin("3039746628509621896").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForDesignerWell() {
@@ -170,8 +169,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81dd67L);
     b.origin("r:c2e19f41-b779-4566-b6a0-4e4349db4a36(NewDSL.structure)/3039746628509621872");
     b.version(3);
-    b.property("depthPressure", 0x2a2f59740f81de73L).type(MetaIdFactory.dataTypeId(0xf8b003b890094569L, 0xbf6aa5ebb10d759dL, 0x2a2f59740f81dd7bL)).origin("3039746628509621875").done();
-    b.property("temperaturePressure", 0x2a2f59740f81de75L).type(MetaIdFactory.dataTypeId(0xf8b003b890094569L, 0xbf6aa5ebb10d759dL, 0x2a2f59740f81dd7bL)).origin("3039746628509621877").done();
+    b.property("depthPressure", 0x2a2f59740f81de73L).type(MetaIdFactory.dataTypeId(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81dd7bL)).origin("3039746628509621875").done();
+    b.property("temperaturePressure", 0x2a2f59740f81de75L).type(MetaIdFactory.dataTypeId(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81dd7bL)).origin("3039746628509621877").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForHorizontalWell() {
@@ -181,7 +180,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81dd67L);
     b.origin("r:c2e19f41-b779-4566-b6a0-4e4349db4a36(NewDSL.structure)/3039746628509621903");
     b.version(3);
-    b.property("drillingAngle", 0x2a2f59740f81de91L).type(MetaIdFactory.dataTypeId(0xf8b003b890094569L, 0xbf6aa5ebb10d759dL, 0x2a2f59740f81dd7bL)).origin("3039746628509621905").done();
+    b.property("drillingAngle", 0x2a2f59740f81de91L).type(MetaIdFactory.dataTypeId(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81dd7bL)).origin("3039746628509621905").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForInjectionWell() {
@@ -192,7 +191,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:c2e19f41-b779-4566-b6a0-4e4349db4a36(NewDSL.structure)/3039746628509621851");
     b.version(3);
     b.property("injectionType", 0x2a2f59740f81de69L).type(MetaIdFactory.dataTypeId(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81de5eL)).origin("3039746628509621865").done();
-    b.property("injectedVolume", 0x2a2f59740f81de6bL).type(MetaIdFactory.dataTypeId(0xf8b003b890094569L, 0xbf6aa5ebb10d759dL, 0x2a2f59740f81dd7bL)).origin("3039746628509621867").done();
+    b.property("injectedVolume", 0x2a2f59740f81de6bL).type(MetaIdFactory.dataTypeId(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81dd7bL)).origin("3039746628509621867").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForInstalledAccessories() {
@@ -229,7 +228,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81dd67L);
     b.origin("r:c2e19f41-b779-4566-b6a0-4e4349db4a36(NewDSL.structure)/3039746628509621611");
     b.version(3);
-    b.property("bpd", 0x2a2f59740f81de19L).type(MetaIdFactory.dataTypeId(0xf8b003b890094569L, 0xbf6aa5ebb10d759dL, 0x2a2f59740f81dd7bL)).origin("3039746628509621785").done();
+    b.property("bpd", 0x2a2f59740f81de19L).type(MetaIdFactory.dataTypeId(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81dd7bL)).origin("3039746628509621785").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForReservoir() {
@@ -238,8 +237,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:c2e19f41-b779-4566-b6a0-4e4349db4a36(NewDSL.structure)/3039746628509621706");
     b.version(3);
-    b.property("pososity", 0x2a2f59740f81ddceL).type(MetaIdFactory.dataTypeId(0xf8b003b890094569L, 0xbf6aa5ebb10d759dL, 0x2a2f59740f81dd7bL)).origin("3039746628509621710").done();
-    b.property("permeability", 0x2a2f59740f81ddd0L).type(MetaIdFactory.dataTypeId(0xf8b003b890094569L, 0xbf6aa5ebb10d759dL, 0x2a2f59740f81dd7bL)).origin("3039746628509621712").done();
+    b.property("pososity", 0x2a2f59740f81ddceL).type(MetaIdFactory.dataTypeId(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81dd7bL)).origin("3039746628509621710").done();
+    b.property("permeability", 0x2a2f59740f81ddd0L).type(MetaIdFactory.dataTypeId(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81dd7bL)).origin("3039746628509621712").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForSiliciclasticReservoir() {
@@ -266,15 +265,15 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:c2e19f41-b779-4566-b6a0-4e4349db4a36(NewDSL.structure)/3039746628509621607");
     b.version(3);
-    b.property("casingSize", 0x2a2f59740f81dd71L).type(MetaIdFactory.dataTypeId(0xf8b003b890094569L, 0xbf6aa5ebb10d759dL, 0x2a2f59740f81dd7bL)).origin("3039746628509621617").done();
-    b.property("pipeSize", 0x2a2f59740f81dd76L).type(MetaIdFactory.dataTypeId(0xf8b003b890094569L, 0xbf6aa5ebb10d759dL, 0x2a2f59740f81dd7bL)).origin("3039746628509621622").done();
+    b.property("casingSize", 0x2a2f59740f81dd71L).type(MetaIdFactory.dataTypeId(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81dd7bL)).origin("3039746628509621617").done();
+    b.property("pipeSize", 0x2a2f59740f81dd76L).type(MetaIdFactory.dataTypeId(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81dd7bL)).origin("3039746628509621622").done();
     b.property("wellheadType", 0x2a2f59740f81dd7fL).type(MetaIdFactory.dataTypeId(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81dd84L)).origin("3039746628509621631").done();
-    b.property("pressure", 0x2a2f59740f81dd8dL).type(MetaIdFactory.dataTypeId(0xf8b003b890094569L, 0xbf6aa5ebb10d759dL, 0x2a2f59740f81dd7bL)).origin("3039746628509621645").done();
-    b.property("temperature", 0x2a2f59740f81dd9dL).type(MetaIdFactory.dataTypeId(0xf8b003b890094569L, 0xbf6aa5ebb10d759dL, 0x2a2f59740f81dd7bL)).origin("3039746628509621661").done();
+    b.property("pressure", 0x2a2f59740f81dd8dL).type(MetaIdFactory.dataTypeId(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81dd7bL)).origin("3039746628509621645").done();
+    b.property("temperature", 0x2a2f59740f81dd9dL).type(MetaIdFactory.dataTypeId(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81dd7bL)).origin("3039746628509621661").done();
     b.property("drillingOperation", 0x2a2f59740f81ddbaL).type(MetaIdFactory.dataTypeId(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81ddc1L)).origin("3039746628509621690").done();
     b.aggregate("coordinates", 0x2a2f59740f81ddb4L).target(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81dd92L).optional(false).ordered(true).multiple(false).origin("3039746628509621684").done();
-    b.aggregate("carbonateReservoir", 0x2a2f59740f820151L).target(0xf8b003b890094569L, 0xbf6aa5ebb10d759dL, 0x2a2f59740f81de0bL).optional(true).ordered(true).multiple(false).origin("3039746628509630801").done();
-    b.aggregate("siliciclasticReservoir", 0x2a2f59740f820154L).target(0xf8b003b890094569L, 0xbf6aa5ebb10d759dL, 0x2a2f59740f81de0cL).optional(true).ordered(true).multiple(false).origin("3039746628509630804").done();
+    b.aggregate("carbonateReservoir", 0x2a2f59740f820151L).target(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81de0bL).optional(true).ordered(true).multiple(false).origin("3039746628509630801").done();
+    b.aggregate("siliciclasticReservoir", 0x2a2f59740f820154L).target(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81de0cL).optional(true).ordered(true).multiple(false).origin("3039746628509630804").done();
     b.alias("well");
     return b.create();
   }

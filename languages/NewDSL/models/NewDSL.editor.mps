@@ -7,8 +7,6 @@
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
-    <import index="hxtz" ref="r:2ee55757-fdb9-4dd1-9f12-94dbb36892da(OilPP.structure)" />
-    <import index="tmz5" ref="r:8649f8ec-52cb-4540-b751-ff5f17baa162(OilPP.editor)" />
     <import index="7zo2" ref="r:c2e19f41-b779-4566-b6a0-4e4349db4a36(NewDSL.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>

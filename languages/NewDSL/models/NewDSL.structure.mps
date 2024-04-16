@@ -5,7 +5,6 @@
     <devkit ref="78434eb8-b0e5-444b-850d-e7c4ad2da9ab(jetbrains.mps.devkit.aspect.structure)" />
   </languages>
   <imports>
-    <import index="hxtz" ref="r:2ee55757-fdb9-4dd1-9f12-94dbb36892da(OilPP.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
@@ -115,12 +114,12 @@
     <node concept="1TJgyi" id="2CJmngfwtRe" role="1TKVEl">
       <property role="IQ2nx" value="3039746628509621710" />
       <property role="TrG5h" value="pososity" />
-      <ref role="AX2Wp" to="hxtz:2CJmngfwtPV" resolve="float" />
+      <ref role="AX2Wp" node="2CJmngfwtPV" resolve="float" />
     </node>
     <node concept="1TJgyi" id="2CJmngfwtRg" role="1TKVEl">
       <property role="IQ2nx" value="3039746628509621712" />
       <property role="TrG5h" value="permeability" />
-      <ref role="AX2Wp" to="hxtz:2CJmngfwtPV" resolve="float" />
+      <ref role="AX2Wp" node="2CJmngfwtPV" resolve="float" />
     </node>
   </node>
   <node concept="1TIwiD" id="2CJmngfwtSc">
@@ -187,7 +186,7 @@
     <node concept="1TJgyi" id="2CJmngfwtTb" role="1TKVEl">
       <property role="IQ2nx" value="3039746628509621835" />
       <property role="TrG5h" value="pumpSettlementDepth" />
-      <ref role="AX2Wp" to="hxtz:2CJmngfwtPV" resolve="float" />
+      <ref role="AX2Wp" node="2CJmngfwtPV" resolve="float" />
     </node>
     <node concept="1TJgyj" id="2CJmngfwtTn" role="1TKVEi">
       <property role="IQ2ns" value="3039746628509621847" />
@@ -234,17 +233,17 @@
     <node concept="1TJgyi" id="2CJmngfwtQj" role="1TKVEl">
       <property role="IQ2nx" value="3039746628509621651" />
       <property role="TrG5h" value="latitude" />
-      <ref role="AX2Wp" to="hxtz:2CJmngfwtPV" resolve="float" />
+      <ref role="AX2Wp" node="2CJmngfwtPV" resolve="float" />
     </node>
     <node concept="1TJgyi" id="2CJmngfwtQl" role="1TKVEl">
       <property role="IQ2nx" value="3039746628509621653" />
       <property role="TrG5h" value="longitude" />
-      <ref role="AX2Wp" to="hxtz:2CJmngfwtPV" resolve="float" />
+      <ref role="AX2Wp" node="2CJmngfwtPV" resolve="float" />
     </node>
     <node concept="1TJgyi" id="2CJmngfwtQo" role="1TKVEl">
       <property role="IQ2nx" value="3039746628509621656" />
       <property role="TrG5h" value="altitude" />
-      <ref role="AX2Wp" to="hxtz:2CJmngfwtPV" resolve="float" />
+      <ref role="AX2Wp" node="2CJmngfwtPV" resolve="float" />
     </node>
   </node>
   <node concept="1TIwiD" id="2CJmngfwtTX">
@@ -256,12 +255,12 @@
     <node concept="1TJgyi" id="2CJmngfwtU3" role="1TKVEl">
       <property role="IQ2nx" value="3039746628509621891" />
       <property role="TrG5h" value="depthPressure" />
-      <ref role="AX2Wp" to="hxtz:2CJmngfwtPV" resolve="float" />
+      <ref role="AX2Wp" node="2CJmngfwtPV" resolve="float" />
     </node>
     <node concept="1TJgyi" id="2CJmngfwtU8" role="1TKVEl">
       <property role="IQ2nx" value="3039746628509621896" />
       <property role="TrG5h" value="temperaturePressure" />
-      <ref role="AX2Wp" to="hxtz:2CJmngfwtPV" resolve="float" />
+      <ref role="AX2Wp" node="2CJmngfwtPV" resolve="float" />
     </node>
   </node>
   <node concept="1TIwiD" id="2CJmngfwtUk">
@@ -303,12 +302,12 @@
     <node concept="1TJgyi" id="2CJmngfwtTN" role="1TKVEl">
       <property role="IQ2nx" value="3039746628509621875" />
       <property role="TrG5h" value="depthPressure" />
-      <ref role="AX2Wp" to="hxtz:2CJmngfwtPV" resolve="float" />
+      <ref role="AX2Wp" node="2CJmngfwtPV" resolve="float" />
     </node>
     <node concept="1TJgyi" id="2CJmngfwtTP" role="1TKVEl">
       <property role="IQ2nx" value="3039746628509621877" />
       <property role="TrG5h" value="temperaturePressure" />
-      <ref role="AX2Wp" to="hxtz:2CJmngfwtPV" resolve="float" />
+      <ref role="AX2Wp" node="2CJmngfwtPV" resolve="float" />
     </node>
   </node>
   <node concept="1TIwiD" id="2CJmngfwtUf">
@@ -320,7 +319,7 @@
     <node concept="1TJgyi" id="2CJmngfwtUh" role="1TKVEl">
       <property role="IQ2nx" value="3039746628509621905" />
       <property role="TrG5h" value="drillingAngle" />
-      <ref role="AX2Wp" to="hxtz:2CJmngfwtPV" resolve="float" />
+      <ref role="AX2Wp" node="2CJmngfwtPV" resolve="float" />
     </node>
   </node>
   <node concept="25R3W" id="2CJmngfwtTu">
@@ -354,7 +353,7 @@
     <node concept="1TJgyi" id="2CJmngfwtTF" role="1TKVEl">
       <property role="IQ2nx" value="3039746628509621867" />
       <property role="TrG5h" value="injectedVolume" />
-      <ref role="AX2Wp" to="hxtz:2CJmngfwtPV" resolve="float" />
+      <ref role="AX2Wp" node="2CJmngfwtPV" resolve="float" />
     </node>
   </node>
   <node concept="1TIwiD" id="2CJmngfwtTg">
@@ -397,7 +396,7 @@
     <node concept="1TJgyi" id="2CJmngfwtSp" role="1TKVEl">
       <property role="IQ2nx" value="3039746628509621785" />
       <property role="TrG5h" value="bpd" />
-      <ref role="AX2Wp" to="hxtz:2CJmngfwtPV" resolve="float" />
+      <ref role="AX2Wp" node="2CJmngfwtPV" resolve="float" />
     </node>
   </node>
   <node concept="1TIwiD" id="2CJmngfwtUm">
@@ -424,12 +423,12 @@
     <node concept="1TJgyi" id="2CJmngfwtPL" role="1TKVEl">
       <property role="IQ2nx" value="3039746628509621617" />
       <property role="TrG5h" value="casingSize" />
-      <ref role="AX2Wp" to="hxtz:2CJmngfwtPV" resolve="float" />
+      <ref role="AX2Wp" node="2CJmngfwtPV" resolve="float" />
     </node>
     <node concept="1TJgyi" id="2CJmngfwtPQ" role="1TKVEl">
       <property role="IQ2nx" value="3039746628509621622" />
       <property role="TrG5h" value="pipeSize" />
-      <ref role="AX2Wp" to="hxtz:2CJmngfwtPV" resolve="float" />
+      <ref role="AX2Wp" node="2CJmngfwtPV" resolve="float" />
     </node>
     <node concept="1TJgyi" id="2CJmngfwtPZ" role="1TKVEl">
       <property role="IQ2nx" value="3039746628509621631" />
@@ -439,12 +438,12 @@
     <node concept="1TJgyi" id="2CJmngfwtQd" role="1TKVEl">
       <property role="IQ2nx" value="3039746628509621645" />
       <property role="TrG5h" value="pressure" />
-      <ref role="AX2Wp" to="hxtz:2CJmngfwtPV" resolve="float" />
+      <ref role="AX2Wp" node="2CJmngfwtPV" resolve="float" />
     </node>
     <node concept="1TJgyi" id="2CJmngfwtQt" role="1TKVEl">
       <property role="IQ2nx" value="3039746628509621661" />
       <property role="TrG5h" value="temperature" />
-      <ref role="AX2Wp" to="hxtz:2CJmngfwtPV" resolve="float" />
+      <ref role="AX2Wp" node="2CJmngfwtPV" resolve="float" />
     </node>
     <node concept="1TJgyi" id="2CJmngfwtQU" role="1TKVEl">
       <property role="IQ2nx" value="3039746628509621690" />
@@ -462,13 +461,13 @@
       <property role="IQ2ns" value="3039746628509630801" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="carbonateReservoir" />
-      <ref role="20lvS9" to="hxtz:2CJmngfwtSb" resolve="CarbonateReservoir" />
+      <ref role="20lvS9" node="2CJmngfwtSb" resolve="CarbonateReservoir" />
     </node>
     <node concept="1TJgyj" id="2CJmngfww5k" role="1TKVEi">
       <property role="IQ2ns" value="3039746628509630804" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="siliciclasticReservoir" />
-      <ref role="20lvS9" to="hxtz:2CJmngfwtSc" resolve="SiliciclasticReservoir" />
+      <ref role="20lvS9" node="2CJmngfwtSc" resolve="SiliciclasticReservoir" />
     </node>
   </node>
   <node concept="25R3W" id="2CJmngfwtQ4">
