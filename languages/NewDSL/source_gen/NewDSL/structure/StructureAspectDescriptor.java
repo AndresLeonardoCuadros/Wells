@@ -4,35 +4,43 @@ package NewDSL.structure;
 
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.EnumerationDescriptor;
+import jetbrains.mps.smodel.runtime.ConstrainedStringDatatypeDescriptor;
+import jetbrains.mps.smodel.runtime.ConstrainedStringDatatypeDescriptorImpl;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.DataTypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptAlsProductionWell = createDescriptorForAlsProductionWell();
-  /*package*/ final ConceptDescriptor myConceptAlsType = createDescriptorForAlsType();
-  /*package*/ final ConceptDescriptor myConceptCarbonateReservoirType = createDescriptorForCarbonateReservoirType();
+  /*package*/ final ConceptDescriptor myConceptCarbonateReservoir = createDescriptorForCarbonateReservoir();
   /*package*/ final ConceptDescriptor myConceptCoordinates = createDescriptorForCoordinates();
   /*package*/ final ConceptDescriptor myConceptDepositWell = createDescriptorForDepositWell();
   /*package*/ final ConceptDescriptor myConceptDesignerWell = createDescriptorForDesignerWell();
-  /*package*/ final ConceptDescriptor myConceptDrillingOperation = createDescriptorForDrillingOperation();
   /*package*/ final ConceptDescriptor myConceptExploratoryWell = createDescriptorForExploratoryWell();
   /*package*/ final ConceptDescriptor myConceptHorizontalWell = createDescriptorForHorizontalWell();
-  /*package*/ final ConceptDescriptor myConceptInjectionType = createDescriptorForInjectionType();
   /*package*/ final ConceptDescriptor myConceptInjectionWell = createDescriptorForInjectionWell();
+  /*package*/ final ConceptDescriptor myConceptInstalledAccessories = createDescriptorForInstalledAccessories();
   /*package*/ final ConceptDescriptor myConceptMultilateralWell = createDescriptorForMultilateralWell();
-  /*package*/ final ConceptDescriptor myConceptProductionType = createDescriptorForProductionType();
+  /*package*/ final ConceptDescriptor myConceptNaturalFlowProductionWell = createDescriptorForNaturalFlowProductionWell();
   /*package*/ final ConceptDescriptor myConceptProductionWell = createDescriptorForProductionWell();
   /*package*/ final ConceptDescriptor myConceptReservoir = createDescriptorForReservoir();
-  /*package*/ final ConceptDescriptor myConceptReservoirType = createDescriptorForReservoirType();
-  /*package*/ final ConceptDescriptor myConceptReservoriWell = createDescriptorForReservoriWell();
-  /*package*/ final ConceptDescriptor myConceptSiliciclasticReservoirType = createDescriptorForSiliciclasticReservoirType();
+  /*package*/ final ConceptDescriptor myConceptSiliciclasticReservoir = createDescriptorForSiliciclasticReservoir();
+  /*package*/ final ConceptDescriptor myConceptTargets = createDescriptorForTargets();
   /*package*/ final ConceptDescriptor myConceptWell = createDescriptorForWell();
-  /*package*/ final ConceptDescriptor myConceptWellHeadType = createDescriptorForWellHeadType();
+  /*package*/ final EnumerationDescriptor myEnumerationAlsType = new EnumerationDescriptor_AlsType();
+  /*package*/ final EnumerationDescriptor myEnumerationCarbonateType = new EnumerationDescriptor_CarbonateType();
+  /*package*/ final EnumerationDescriptor myEnumerationDrillingOperation = new EnumerationDescriptor_DrillingOperation();
+  /*package*/ final EnumerationDescriptor myEnumerationInjectionType = new EnumerationDescriptor_InjectionType();
+  /*package*/ final EnumerationDescriptor myEnumerationSiliciclasticType = new EnumerationDescriptor_SiliciclasticType();
+  /*package*/ final EnumerationDescriptor myEnumerationWellheadType = new EnumerationDescriptor_WellheadType();
+  /*package*/ final ConstrainedStringDatatypeDescriptor myCSDatatypefloat = new ConstrainedStringDatatypeDescriptorImpl(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81dd7bL, "float", "r:c2e19f41-b779-4566-b6a0-4e4349db4a36(NewDSL.structure)/3039746628509621627", "[+-]?[0-9]+(\\.[0-9]+)?([Ee][+-]?[0-9]+)?");
   private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
@@ -43,11 +51,12 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   public void reportDependencies(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.Dependencies deps) {
     deps.extendedLanguage(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, "jetbrains.mps.lang.core");
+    deps.aggregatedLanguage(0xf8b003b890094569L, 0xbf6aa5ebb10d759dL, "OilPP");
   }
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAlsProductionWell, myConceptAlsType, myConceptCarbonateReservoirType, myConceptCoordinates, myConceptDepositWell, myConceptDesignerWell, myConceptDrillingOperation, myConceptExploratoryWell, myConceptHorizontalWell, myConceptInjectionType, myConceptInjectionWell, myConceptMultilateralWell, myConceptProductionType, myConceptProductionWell, myConceptReservoir, myConceptReservoirType, myConceptReservoriWell, myConceptSiliciclasticReservoirType, myConceptWell, myConceptWellHeadType);
+    return Arrays.asList(myConceptAlsProductionWell, myConceptCarbonateReservoir, myConceptCoordinates, myConceptDepositWell, myConceptDesignerWell, myConceptExploratoryWell, myConceptHorizontalWell, myConceptInjectionWell, myConceptInstalledAccessories, myConceptMultilateralWell, myConceptNaturalFlowProductionWell, myConceptProductionWell, myConceptReservoir, myConceptSiliciclasticReservoir, myConceptTargets, myConceptWell);
   }
 
   @Override
@@ -56,277 +65,217 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     switch (myIndexSwitch.index(id)) {
       case LanguageConceptSwitch.AlsProductionWell:
         return myConceptAlsProductionWell;
-      case LanguageConceptSwitch.AlsType:
-        return myConceptAlsType;
-      case LanguageConceptSwitch.CarbonateReservoirType:
-        return myConceptCarbonateReservoirType;
+      case LanguageConceptSwitch.CarbonateReservoir:
+        return myConceptCarbonateReservoir;
       case LanguageConceptSwitch.Coordinates:
         return myConceptCoordinates;
       case LanguageConceptSwitch.DepositWell:
         return myConceptDepositWell;
       case LanguageConceptSwitch.DesignerWell:
         return myConceptDesignerWell;
-      case LanguageConceptSwitch.DrillingOperation:
-        return myConceptDrillingOperation;
       case LanguageConceptSwitch.ExploratoryWell:
         return myConceptExploratoryWell;
       case LanguageConceptSwitch.HorizontalWell:
         return myConceptHorizontalWell;
-      case LanguageConceptSwitch.InjectionType:
-        return myConceptInjectionType;
       case LanguageConceptSwitch.InjectionWell:
         return myConceptInjectionWell;
+      case LanguageConceptSwitch.InstalledAccessories:
+        return myConceptInstalledAccessories;
       case LanguageConceptSwitch.MultilateralWell:
         return myConceptMultilateralWell;
-      case LanguageConceptSwitch.ProductionType:
-        return myConceptProductionType;
+      case LanguageConceptSwitch.NaturalFlowProductionWell:
+        return myConceptNaturalFlowProductionWell;
       case LanguageConceptSwitch.ProductionWell:
         return myConceptProductionWell;
       case LanguageConceptSwitch.Reservoir:
         return myConceptReservoir;
-      case LanguageConceptSwitch.ReservoirType:
-        return myConceptReservoirType;
-      case LanguageConceptSwitch.ReservoriWell:
-        return myConceptReservoriWell;
-      case LanguageConceptSwitch.SiliciclasticReservoirType:
-        return myConceptSiliciclasticReservoirType;
+      case LanguageConceptSwitch.SiliciclasticReservoir:
+        return myConceptSiliciclasticReservoir;
+      case LanguageConceptSwitch.Targets:
+        return myConceptTargets;
       case LanguageConceptSwitch.Well:
         return myConceptWell;
-      case LanguageConceptSwitch.WellHeadType:
-        return myConceptWellHeadType;
       default:
         return null;
     }
   }
 
+  @Override
+  public Collection<DataTypeDescriptor> getDataTypeDescriptors() {
+    return Arrays.asList(myEnumerationAlsType, myEnumerationCarbonateType, myEnumerationDrillingOperation, myEnumerationInjectionType, myEnumerationSiliciclasticType, myEnumerationWellheadType, myCSDatatypefloat);
+  }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
     return myIndexSwitch.index(c);
   }
 
   private static ConceptDescriptor createDescriptorForAlsProductionWell() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewDSL", "AlsProductionWell", 0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x740a9055b20726afL);
-    b.class_(false, false, false);
-    b.origin("r:c2e19f41-b779-4566-b6a0-4e4349db4a36(NewDSL.structure)/8361654355900180143");
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewDSL", "AlsProductionWell", 0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81de1eL);
+    b.class_(false, false, true);
+    // extends: NewDSL.structure.ProductionWell
+    b.super_(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81dd6bL);
+    b.origin("r:c2e19f41-b779-4566-b6a0-4e4349db4a36(NewDSL.structure)/3039746628509621790");
     b.version(3);
-    b.property("pumpBrand", 0x740a9055b20726b3L).type(PrimitiveTypeId.INTEGER).origin("8361654355900180147").done();
-    b.property("installedAccessories", 0x740a9055b20726b7L).type(PrimitiveTypeId.STRING).origin("8361654355900180151").done();
-    b.property("pumpSettlementDepth", 0x740a9055b20726beL).type(PrimitiveTypeId.INTEGER).origin("8361654355900180158").done();
-    b.aggregate("AlsType", 0x740a9055b20726caL).target(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x740a9055b20726cdL).optional(false).ordered(true).multiple(false).origin("8361654355900180170").done();
+    b.property("type", 0x2a2f59740f81de45L).type(MetaIdFactory.dataTypeId(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81de21L)).origin("3039746628509621829").done();
+    b.property("pumpBrand", 0x2a2f59740f81de47L).type(PrimitiveTypeId.INTEGER).origin("3039746628509621831").done();
+    b.property("pumpSettlementDepth", 0x2a2f59740f81de4bL).type(MetaIdFactory.dataTypeId(0xf8b003b890094569L, 0xbf6aa5ebb10d759dL, 0x2a2f59740f81dd7bL)).origin("3039746628509621835").done();
+    b.aggregate("accessories", 0x2a2f59740f81de57L).target(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81de50L).optional(true).ordered(true).multiple(true).origin("3039746628509621847").done();
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForAlsType() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewDSL", "AlsType", 0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x740a9055b20726cdL);
+  private static ConceptDescriptor createDescriptorForCarbonateReservoir() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewDSL", "CarbonateReservoir", 0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81de0bL);
     b.class_(false, false, false);
-    b.origin("r:c2e19f41-b779-4566-b6a0-4e4349db4a36(NewDSL.structure)/8361654355900180173");
+    // extends: NewDSL.structure.Reservoir
+    b.super_(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81ddcaL);
+    b.origin("r:c2e19f41-b779-4566-b6a0-4e4349db4a36(NewDSL.structure)/3039746628509621771");
     b.version(3);
-    b.property("suckerRodPump", 0x740a9055b20726cfL).type(PrimitiveTypeId.STRING).origin("8361654355900180175").done();
-    b.property("electricalSubmeriblePump", 0x740a9055b20726d5L).type(PrimitiveTypeId.INTEGER).origin("8361654355900180181").done();
-    b.property("pregressiveCavityPump", 0x740a9055b20726ddL).type(PrimitiveTypeId.INTEGER).origin("8361654355900180189").done();
-    b.property("hydraulicPump", 0x740a9055b20726e8L).type(PrimitiveTypeId.INTEGER).origin("8361654355900180200").done();
-    b.property("gasLit", 0x740a9055b20726f1L).type(PrimitiveTypeId.INTEGER).origin("8361654355900180209").done();
-    b.property("plungerLit", 0x740a9055b20726f9L).type(PrimitiveTypeId.INTEGER).origin("8361654355900180217").done();
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForCarbonateReservoirType() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewDSL", "CarbonateReservoirType", 0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x740a9055b206ff92L);
-    b.class_(false, false, false);
-    b.origin("r:c2e19f41-b779-4566-b6a0-4e4349db4a36(NewDSL.structure)/8361654355900170130");
-    b.version(3);
-    b.property("reef", 0x740a9055b206ff94L).type(PrimitiveTypeId.STRING).origin("8361654355900170132").done();
-    b.property("dolomite", 0x740a9055b206ff97L).type(PrimitiveTypeId.INTEGER).origin("8361654355900170135").done();
-    b.property("classicLimestone", 0x740a9055b206ff9cL).type(PrimitiveTypeId.STRING).origin("8361654355900170140").done();
-    b.property("afalinticLimestone", 0x740a9055b206ffa4L).type(PrimitiveTypeId.STRING).origin("8361654355900170148").done();
+    b.property("type", 0x2a2f59740f81de0fL).type(MetaIdFactory.dataTypeId(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x1dad7a2dd30e511bL)).origin("3039746628509621775").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForCoordinates() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewDSL", "Coordinates", 0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x7b5c7fc646f34c3eL);
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewDSL", "Coordinates", 0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81dd92L);
     b.class_(false, false, false);
-    b.origin("r:c2e19f41-b779-4566-b6a0-4e4349db4a36(NewDSL.structure)/8889120254093118526");
+    b.origin("r:c2e19f41-b779-4566-b6a0-4e4349db4a36(NewDSL.structure)/3039746628509621650");
     b.version(3);
-    b.property("latitude", 0x7b5c7fc646f34c43L).type(PrimitiveTypeId.INTEGER).origin("8889120254093118531").done();
-    b.property("longitude", 0x7b5c7fc646f34c45L).type(PrimitiveTypeId.INTEGER).origin("8889120254093118533").done();
-    b.property("altitude", 0x7b5c7fc646f34c49L).type(PrimitiveTypeId.INTEGER).origin("8889120254093118537").done();
+    b.property("latitude", 0x2a2f59740f81dd93L).type(MetaIdFactory.dataTypeId(0xf8b003b890094569L, 0xbf6aa5ebb10d759dL, 0x2a2f59740f81dd7bL)).origin("3039746628509621651").done();
+    b.property("longitude", 0x2a2f59740f81dd95L).type(MetaIdFactory.dataTypeId(0xf8b003b890094569L, 0xbf6aa5ebb10d759dL, 0x2a2f59740f81dd7bL)).origin("3039746628509621653").done();
+    b.property("altitude", 0x2a2f59740f81dd98L).type(MetaIdFactory.dataTypeId(0xf8b003b890094569L, 0xbf6aa5ebb10d759dL, 0x2a2f59740f81dd7bL)).origin("3039746628509621656").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForDepositWell() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewDSL", "DepositWell", 0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x740a9055b2063623L);
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewDSL", "DepositWell", 0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81de7dL);
     b.class_(false, false, true);
     // extends: NewDSL.structure.Well
-    b.super_(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x5978c60a757d5133L);
-    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
-    b.origin("r:c2e19f41-b779-4566-b6a0-4e4349db4a36(NewDSL.structure)/8361654355900118563");
+    b.super_(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81dd67L);
+    b.origin("r:c2e19f41-b779-4566-b6a0-4e4349db4a36(NewDSL.structure)/3039746628509621885");
     b.version(3);
-    b.property("depthPressure", 0x740a9055b2063636L).type(PrimitiveTypeId.INTEGER).origin("8361654355900118582").done();
-    b.property("temperaturePressure", 0x740a9055b206363bL).type(PrimitiveTypeId.INTEGER).origin("8361654355900118587").done();
+    b.property("depthPressure", 0x2a2f59740f81de83L).type(MetaIdFactory.dataTypeId(0xf8b003b890094569L, 0xbf6aa5ebb10d759dL, 0x2a2f59740f81dd7bL)).origin("3039746628509621891").done();
+    b.property("temperaturePressure", 0x2a2f59740f81de88L).type(MetaIdFactory.dataTypeId(0xf8b003b890094569L, 0xbf6aa5ebb10d759dL, 0x2a2f59740f81dd7bL)).origin("3039746628509621896").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForDesignerWell() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewDSL", "DesignerWell", 0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2fba2edb99362035L);
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewDSL", "DesignerWell", 0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81de94L);
     b.class_(false, false, true);
     // extends: NewDSL.structure.Well
-    b.super_(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x5978c60a757d5133L);
-    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
-    b.origin("r:c2e19f41-b779-4566-b6a0-4e4349db4a36(NewDSL.structure)/3439112786153971765");
+    b.super_(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81dd67L);
+    b.origin("r:c2e19f41-b779-4566-b6a0-4e4349db4a36(NewDSL.structure)/3039746628509621908");
     b.version(3);
-    b.property("targets", 0x4cde0cd1187a2b47L).type(PrimitiveTypeId.STRING).origin("5538878683910646599").done();
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForDrillingOperation() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewDSL", "DrillingOperation", 0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x3d848a6e7457c41fL);
-    b.class_(false, false, false);
-    b.origin("r:c2e19f41-b779-4566-b6a0-4e4349db4a36(NewDSL.structure)/4432820140242355231");
-    b.version(3);
-    b.property("cffshore", 0x3d848a6e7457c423L).type(PrimitiveTypeId.INTEGER).origin("4432820140242355235").done();
-    b.property("cnshore", 0x3d848a6e7457c426L).type(PrimitiveTypeId.INTEGER).origin("4432820140242355238").done();
+    b.aggregate("targets", 0x2a2f59740f81de9aL).target(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81de96L).optional(true).ordered(true).multiple(true).origin("3039746628509621914").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForExploratoryWell() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewDSL", "ExploratoryWell", 0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x7b5c7fc646f34c22L);
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewDSL", "ExploratoryWell", 0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81de70L);
     b.class_(false, false, true);
     // extends: NewDSL.structure.Well
-    b.super_(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x5978c60a757d5133L);
-    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
-    b.origin("r:c2e19f41-b779-4566-b6a0-4e4349db4a36(NewDSL.structure)/8889120254093118498");
+    b.super_(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81dd67L);
+    b.origin("r:c2e19f41-b779-4566-b6a0-4e4349db4a36(NewDSL.structure)/3039746628509621872");
     b.version(3);
-    b.property("depthPressure", 0x4cde0cd118743694L).type(PrimitiveTypeId.INTEGER).origin("5538878683910256276").done();
-    b.property("temperaturePressure", 0x4cde0cd118743699L).type(PrimitiveTypeId.INTEGER).origin("5538878683910256281").done();
+    b.property("depthPressure", 0x2a2f59740f81de73L).type(MetaIdFactory.dataTypeId(0xf8b003b890094569L, 0xbf6aa5ebb10d759dL, 0x2a2f59740f81dd7bL)).origin("3039746628509621875").done();
+    b.property("temperaturePressure", 0x2a2f59740f81de75L).type(MetaIdFactory.dataTypeId(0xf8b003b890094569L, 0xbf6aa5ebb10d759dL, 0x2a2f59740f81dd7bL)).origin("3039746628509621877").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForHorizontalWell() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewDSL", "HorizontalWell", 0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2fba2edb9936203bL);
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewDSL", "HorizontalWell", 0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81de8fL);
     b.class_(false, false, true);
     // extends: NewDSL.structure.Well
-    b.super_(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x5978c60a757d5133L);
-    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
-    b.origin("r:c2e19f41-b779-4566-b6a0-4e4349db4a36(NewDSL.structure)/3439112786153971771");
+    b.super_(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81dd67L);
+    b.origin("r:c2e19f41-b779-4566-b6a0-4e4349db4a36(NewDSL.structure)/3039746628509621903");
     b.version(3);
-    b.property("drillingAngle", 0x740a9055b2063629L).type(PrimitiveTypeId.INTEGER).origin("8361654355900118569").done();
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForInjectionType() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewDSL", "InjectionType", 0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x4cde0cd11874358bL);
-    b.class_(false, false, false);
-    b.origin("r:c2e19f41-b779-4566-b6a0-4e4349db4a36(NewDSL.structure)/5538878683910256011");
-    b.version(3);
-    b.property("vapor", 0x4cde0cd118743590L).type(PrimitiveTypeId.INTEGER).origin("5538878683910256016").done();
-    b.property("water", 0x4cde0cd118743593L).type(PrimitiveTypeId.INTEGER).origin("5538878683910256019").done();
-    b.property("gas", 0x4cde0cd118743597L).type(PrimitiveTypeId.INTEGER).origin("5538878683910256023").done();
+    b.property("drillingAngle", 0x2a2f59740f81de91L).type(MetaIdFactory.dataTypeId(0xf8b003b890094569L, 0xbf6aa5ebb10d759dL, 0x2a2f59740f81dd7bL)).origin("3039746628509621905").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForInjectionWell() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewDSL", "InjectionWell", 0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x7b5c7fc646f34c31L);
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewDSL", "InjectionWell", 0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81de5bL);
     b.class_(false, false, true);
     // extends: NewDSL.structure.Well
-    b.super_(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x5978c60a757d5133L);
-    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
-    b.origin("r:c2e19f41-b779-4566-b6a0-4e4349db4a36(NewDSL.structure)/8889120254093118513");
+    b.super_(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81dd67L);
+    b.origin("r:c2e19f41-b779-4566-b6a0-4e4349db4a36(NewDSL.structure)/3039746628509621851");
     b.version(3);
-    b.property("injectionVolume", 0x3d848a6e7457c458L).type(PrimitiveTypeId.INTEGER).origin("4432820140242355288").done();
-    b.aggregate("InjectionType", 0x740a9055b2072807L).target(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x4cde0cd11874358bL).optional(false).ordered(true).multiple(false).origin("8361654355900180487").done();
+    b.property("injectionType", 0x2a2f59740f81de69L).type(MetaIdFactory.dataTypeId(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81de5eL)).origin("3039746628509621865").done();
+    b.property("injectedVolume", 0x2a2f59740f81de6bL).type(MetaIdFactory.dataTypeId(0xf8b003b890094569L, 0xbf6aa5ebb10d759dL, 0x2a2f59740f81dd7bL)).origin("3039746628509621867").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForInstalledAccessories() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewDSL", "InstalledAccessories", 0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81de50L);
+    b.class_(false, false, false);
+    b.origin("r:c2e19f41-b779-4566-b6a0-4e4349db4a36(NewDSL.structure)/3039746628509621840");
+    b.version(3);
+    b.property("accessory", 0x2a2f59740f81de53L).type(PrimitiveTypeId.STRING).origin("3039746628509621843").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForMultilateralWell() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewDSL", "MultilateralWell", 0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2fba2edb9936202eL);
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewDSL", "MultilateralWell", 0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81de9dL);
     b.class_(false, false, true);
     // extends: NewDSL.structure.Well
-    b.super_(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x5978c60a757d5133L);
-    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
-    b.origin("r:c2e19f41-b779-4566-b6a0-4e4349db4a36(NewDSL.structure)/3439112786153971758");
+    b.super_(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81dd67L);
+    b.origin("r:c2e19f41-b779-4566-b6a0-4e4349db4a36(NewDSL.structure)/3039746628509621917");
     b.version(3);
-    b.property("branches", 0x740a9055b2063625L).type(PrimitiveTypeId.INTEGER).origin("8361654355900118565").done();
+    b.property("branches", 0x2a2f59740f81de9fL).type(PrimitiveTypeId.INTEGER).origin("3039746628509621919").done();
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForProductionType() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewDSL", "ProductionType", 0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x4cde0cd11874359dL);
-    b.class_(false, false, false);
-    b.origin("r:c2e19f41-b779-4566-b6a0-4e4349db4a36(NewDSL.structure)/5538878683910256029");
+  private static ConceptDescriptor createDescriptorForNaturalFlowProductionWell() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewDSL", "NaturalFlowProductionWell", 0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81de1bL);
+    b.class_(false, false, true);
+    // extends: NewDSL.structure.ProductionWell
+    b.super_(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81dd6bL);
+    b.origin("r:c2e19f41-b779-4566-b6a0-4e4349db4a36(NewDSL.structure)/3039746628509621787");
     b.version(3);
-    b.property("naturalFlow", 0x4cde0cd1187d43ffL).type(PrimitiveTypeId.STRING).origin("5538878683910849535").done();
-    b.property("alsProductionwell", 0x4cde0cd1187d4403L).type(PrimitiveTypeId.INTEGER).origin("5538878683910849539").done();
-    b.aggregate("AlsProductionWell", 0x740a9055b20726a9L).target(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x740a9055b20726afL).optional(false).ordered(true).multiple(false).origin("8361654355900180137").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForProductionWell() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewDSL", "ProductionWell", 0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x7b5c7fc646f34c34L);
-    b.class_(false, false, true);
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewDSL", "ProductionWell", 0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81dd6bL);
+    b.class_(false, true, true);
     // extends: NewDSL.structure.Well
-    b.super_(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x5978c60a757d5133L);
-    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
-    b.origin("r:c2e19f41-b779-4566-b6a0-4e4349db4a36(NewDSL.structure)/8889120254093118516");
+    b.super_(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81dd67L);
+    b.origin("r:c2e19f41-b779-4566-b6a0-4e4349db4a36(NewDSL.structure)/3039746628509621611");
     b.version(3);
-    b.property("productionType", 0x740a9055b2063644L).type(PrimitiveTypeId.STRING).origin("8361654355900118596").done();
-    b.property("bpd", 0x740a9055b2063649L).type(PrimitiveTypeId.INTEGER).origin("8361654355900118601").done();
-    b.aggregate("ProductionType", 0x740a9055b20726a5L).target(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x4cde0cd11874359dL).optional(false).ordered(true).multiple(false).origin("8361654355900180133").done();
+    b.property("bpd", 0x2a2f59740f81de19L).type(MetaIdFactory.dataTypeId(0xf8b003b890094569L, 0xbf6aa5ebb10d759dL, 0x2a2f59740f81dd7bL)).origin("3039746628509621785").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForReservoir() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewDSL", "Reservoir", 0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x740a9055b206ff28L);
-    b.class_(false, false, false);
-    b.origin("r:c2e19f41-b779-4566-b6a0-4e4349db4a36(NewDSL.structure)/8361654355900170024");
-    b.version(3);
-    b.property("name", 0x740a9055b206ff2cL).type(PrimitiveTypeId.STRING).origin("8361654355900170028").done();
-    b.property("porosity", 0x740a9055b206ff2fL).type(PrimitiveTypeId.INTEGER).origin("8361654355900170031").done();
-    b.property("permeability", 0x740a9055b206ff36L).type(PrimitiveTypeId.INTEGER).origin("8361654355900170038").done();
-    b.aggregate("reservoirType", 0x740a9055b206ff3dL).target(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x740a9055b206ff44L).optional(false).ordered(true).multiple(false).origin("8361654355900170045").done();
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForReservoirType() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewDSL", "ReservoirType", 0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x740a9055b206ff44L);
-    b.class_(false, false, false);
-    b.origin("r:c2e19f41-b779-4566-b6a0-4e4349db4a36(NewDSL.structure)/8361654355900170052");
-    b.version(3);
-    b.aggregate("siliciclastic", 0x740a9055b206ff48L).target(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x740a9055b206ff5aL).optional(false).ordered(true).multiple(false).origin("8361654355900170056").done();
-    b.aggregate("carbonate", 0x740a9055b206ff4eL).target(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x740a9055b206ff92L).optional(false).ordered(true).multiple(false).origin("8361654355900170062").done();
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForReservoriWell() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewDSL", "ReservoriWell", 0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x7b5c7fc646f34c38L);
-    b.class_(false, false, true);
-    // extends: NewDSL.structure.Well
-    b.super_(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x5978c60a757d5133L);
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewDSL", "Reservoir", 0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81ddcaL);
+    b.class_(false, true, false);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
-    b.origin("r:c2e19f41-b779-4566-b6a0-4e4349db4a36(NewDSL.structure)/8889120254093118520");
+    b.origin("r:c2e19f41-b779-4566-b6a0-4e4349db4a36(NewDSL.structure)/3039746628509621706");
     b.version(3);
+    b.property("pososity", 0x2a2f59740f81ddceL).type(MetaIdFactory.dataTypeId(0xf8b003b890094569L, 0xbf6aa5ebb10d759dL, 0x2a2f59740f81dd7bL)).origin("3039746628509621710").done();
+    b.property("permeability", 0x2a2f59740f81ddd0L).type(MetaIdFactory.dataTypeId(0xf8b003b890094569L, 0xbf6aa5ebb10d759dL, 0x2a2f59740f81dd7bL)).origin("3039746628509621712").done();
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForSiliciclasticReservoirType() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewDSL", "SiliciclasticReservoirType", 0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x740a9055b206ff5aL);
+  private static ConceptDescriptor createDescriptorForSiliciclasticReservoir() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewDSL", "SiliciclasticReservoir", 0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81de0cL);
     b.class_(false, false, false);
-    b.origin("r:c2e19f41-b779-4566-b6a0-4e4349db4a36(NewDSL.structure)/8361654355900170074");
+    // extends: NewDSL.structure.Reservoir
+    b.super_(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81ddcaL);
+    b.origin("r:c2e19f41-b779-4566-b6a0-4e4349db4a36(NewDSL.structure)/3039746628509621772");
     b.version(3);
-    b.property("shallow", 0x740a9055b206ff5fL).type(PrimitiveTypeId.STRING).origin("8361654355900170079").done();
-    b.property("deepMarine", 0x740a9055b206ff62L).type(PrimitiveTypeId.INTEGER).origin("8361654355900170082").done();
-    b.property("lacustrine", 0x740a9055b206ff69L).type(PrimitiveTypeId.INTEGER).origin("8361654355900170089").done();
-    b.property("eolian", 0x740a9055b206ff6fL).type(PrimitiveTypeId.STRING).origin("8361654355900170095").done();
-    b.property("fluvial", 0x740a9055b206ff76L).type(PrimitiveTypeId.STRING).origin("8361654355900170102").done();
-    b.property("deltaic", 0x740a9055b206ff7fL).type(PrimitiveTypeId.STRING).origin("8361654355900170111").done();
+    b.property("type", 0x2a2f59740f81de11L).type(MetaIdFactory.dataTypeId(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x1dad7a2dd30da9adL)).origin("3039746628509621777").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTargets() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewDSL", "Targets", 0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81de96L);
+    b.class_(false, false, false);
+    b.origin("r:c2e19f41-b779-4566-b6a0-4e4349db4a36(NewDSL.structure)/3039746628509621910");
+    b.version(3);
+    b.property("target", 0x2a2f59740f81de97L).type(PrimitiveTypeId.STRING).origin("3039746628509621911").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForWell() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewDSL", "Well", 0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x5978c60a757d5133L);
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewDSL", "Well", 0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81dd67L);
     b.class_(false, true, false);
-    b.origin("r:c2e19f41-b779-4566-b6a0-4e4349db4a36(NewDSL.structure)/6447120614803984691");
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
+    b.origin("r:c2e19f41-b779-4566-b6a0-4e4349db4a36(NewDSL.structure)/3039746628509621607");
     b.version(3);
-    b.property("name", 0x7b5c7fc646f1786aL).type(PrimitiveTypeId.STRING).origin("8889120254092998762").done();
-    b.property("casingSize", 0x3d848a6e7457c438L).type(PrimitiveTypeId.INTEGER).origin("4432820140242355256").done();
-    b.property("pipeSize", 0x3d848a6e7457c43eL).type(PrimitiveTypeId.INTEGER).origin("4432820140242355262").done();
-    b.property("pressure", 0x3d848a6e7457c443L).type(PrimitiveTypeId.INTEGER).origin("4432820140242355267").done();
-    b.property("temperature", 0x3d848a6e7457c44bL).type(PrimitiveTypeId.INTEGER).origin("4432820140242355275").done();
-    b.aggregate("WellHeadType", 0x3d848a6e7457c42cL).target(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x3d848a6e74576ef1L).optional(false).ordered(true).multiple(false).origin("4432820140242355244").done();
-    b.aggregate("Coordinates", 0x3d848a6e7457c42eL).target(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x7b5c7fc646f34c3eL).optional(false).ordered(true).multiple(false).origin("4432820140242355246").done();
-    b.aggregate("DrillingOperation", 0x3d848a6e7457c432L).target(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x3d848a6e7457c41fL).optional(false).ordered(true).multiple(false).origin("4432820140242355250").done();
-    b.aggregate("Reseirvor", 0x740a9055b206ff89L).target(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x740a9055b206ff28L).optional(false).ordered(true).multiple(false).origin("8361654355900170121").done();
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForWellHeadType() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewDSL", "WellHeadType", 0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x3d848a6e74576ef1L);
-    b.class_(false, false, false);
-    b.origin("r:c2e19f41-b779-4566-b6a0-4e4349db4a36(NewDSL.structure)/4432820140242333425");
-    b.version(3);
-    b.property("pumping", 0x3d848a6e7457c40cL).type(PrimitiveTypeId.INTEGER).origin("4432820140242355212").done();
-    b.property("flowing", 0x3d848a6e7457c40fL).type(PrimitiveTypeId.INTEGER).origin("4432820140242355215").done();
-    b.property("gas", 0x3d848a6e7457c414L).type(PrimitiveTypeId.INTEGER).origin("4432820140242355220").done();
+    b.property("casingSize", 0x2a2f59740f81dd71L).type(MetaIdFactory.dataTypeId(0xf8b003b890094569L, 0xbf6aa5ebb10d759dL, 0x2a2f59740f81dd7bL)).origin("3039746628509621617").done();
+    b.property("pipeSize", 0x2a2f59740f81dd76L).type(MetaIdFactory.dataTypeId(0xf8b003b890094569L, 0xbf6aa5ebb10d759dL, 0x2a2f59740f81dd7bL)).origin("3039746628509621622").done();
+    b.property("wellheadType", 0x2a2f59740f81dd7fL).type(MetaIdFactory.dataTypeId(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81dd84L)).origin("3039746628509621631").done();
+    b.property("pressure", 0x2a2f59740f81dd8dL).type(MetaIdFactory.dataTypeId(0xf8b003b890094569L, 0xbf6aa5ebb10d759dL, 0x2a2f59740f81dd7bL)).origin("3039746628509621645").done();
+    b.property("temperature", 0x2a2f59740f81dd9dL).type(MetaIdFactory.dataTypeId(0xf8b003b890094569L, 0xbf6aa5ebb10d759dL, 0x2a2f59740f81dd7bL)).origin("3039746628509621661").done();
+    b.property("drillingOperation", 0x2a2f59740f81ddbaL).type(MetaIdFactory.dataTypeId(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81ddc1L)).origin("3039746628509621690").done();
+    b.aggregate("coordinates", 0x2a2f59740f81ddb4L).target(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81dd92L).optional(false).ordered(true).multiple(false).origin("3039746628509621684").done();
+    b.aggregate("carbonateReservoir", 0x2a2f59740f820151L).target(0xf8b003b890094569L, 0xbf6aa5ebb10d759dL, 0x2a2f59740f81de0bL).optional(true).ordered(true).multiple(false).origin("3039746628509630801").done();
+    b.aggregate("siliciclasticReservoir", 0x2a2f59740f820154L).target(0xf8b003b890094569L, 0xbf6aa5ebb10d759dL, 0x2a2f59740f81de0cL).optional(true).ordered(true).multiple(false).origin("3039746628509630804").done();
+    b.alias("well");
     return b.create();
   }
 }

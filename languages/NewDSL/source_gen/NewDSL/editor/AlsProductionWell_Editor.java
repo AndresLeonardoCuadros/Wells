@@ -7,8 +7,8 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class ReservoriWell_Editor extends DefaultNodeEditor {
+public class AlsProductionWell_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return new ReservoriWell_EditorBuilder_a(editorContext, node).createCell();
+    return new AlsProductionWell_EditorBuilder_a(editorContext, node).createCell();
   }
 }

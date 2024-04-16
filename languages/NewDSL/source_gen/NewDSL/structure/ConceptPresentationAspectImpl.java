@@ -10,25 +10,21 @@ import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private ConceptPresentation props_AlsProductionWell;
-  private ConceptPresentation props_AlsType;
-  private ConceptPresentation props_CarbonateReservoirType;
+  private ConceptPresentation props_CarbonateReservoir;
   private ConceptPresentation props_Coordinates;
   private ConceptPresentation props_DepositWell;
   private ConceptPresentation props_DesignerWell;
-  private ConceptPresentation props_DrillingOperation;
   private ConceptPresentation props_ExploratoryWell;
   private ConceptPresentation props_HorizontalWell;
-  private ConceptPresentation props_InjectionType;
   private ConceptPresentation props_InjectionWell;
+  private ConceptPresentation props_InstalledAccessories;
   private ConceptPresentation props_MultilateralWell;
-  private ConceptPresentation props_ProductionType;
+  private ConceptPresentation props_NaturalFlowProductionWell;
   private ConceptPresentation props_ProductionWell;
   private ConceptPresentation props_Reservoir;
-  private ConceptPresentation props_ReservoirType;
-  private ConceptPresentation props_ReservoriWell;
-  private ConceptPresentation props_SiliciclasticReservoirType;
+  private ConceptPresentation props_SiliciclasticReservoir;
+  private ConceptPresentation props_Targets;
   private ConceptPresentation props_Well;
-  private ConceptPresentation props_WellHeadType;
 
   @Override
   @Nullable
@@ -38,24 +34,17 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.AlsProductionWell:
         if (props_AlsProductionWell == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("AlsProductionWell");
+          cpb.presentationByName();
           props_AlsProductionWell = cpb.create();
         }
         return props_AlsProductionWell;
-      case LanguageConceptSwitch.AlsType:
-        if (props_AlsType == null) {
+      case LanguageConceptSwitch.CarbonateReservoir:
+        if (props_CarbonateReservoir == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("AlsType");
-          props_AlsType = cpb.create();
+          cpb.presentationByName();
+          props_CarbonateReservoir = cpb.create();
         }
-        return props_AlsType;
-      case LanguageConceptSwitch.CarbonateReservoirType:
-        if (props_CarbonateReservoirType == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("CarbonateReservoirType");
-          props_CarbonateReservoirType = cpb.create();
-        }
-        return props_CarbonateReservoirType;
+        return props_CarbonateReservoir;
       case LanguageConceptSwitch.Coordinates:
         if (props_Coordinates == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -77,13 +66,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_DesignerWell = cpb.create();
         }
         return props_DesignerWell;
-      case LanguageConceptSwitch.DrillingOperation:
-        if (props_DrillingOperation == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("DrillingOperation");
-          props_DrillingOperation = cpb.create();
-        }
-        return props_DrillingOperation;
       case LanguageConceptSwitch.ExploratoryWell:
         if (props_ExploratoryWell == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -98,13 +80,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_HorizontalWell = cpb.create();
         }
         return props_HorizontalWell;
-      case LanguageConceptSwitch.InjectionType:
-        if (props_InjectionType == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("InjectionType");
-          props_InjectionType = cpb.create();
-        }
-        return props_InjectionType;
       case LanguageConceptSwitch.InjectionWell:
         if (props_InjectionWell == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -112,6 +87,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_InjectionWell = cpb.create();
         }
         return props_InjectionWell;
+      case LanguageConceptSwitch.InstalledAccessories:
+        if (props_InstalledAccessories == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("InstalledAccessories");
+          props_InstalledAccessories = cpb.create();
+        }
+        return props_InstalledAccessories;
       case LanguageConceptSwitch.MultilateralWell:
         if (props_MultilateralWell == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -119,61 +101,45 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_MultilateralWell = cpb.create();
         }
         return props_MultilateralWell;
-      case LanguageConceptSwitch.ProductionType:
-        if (props_ProductionType == null) {
+      case LanguageConceptSwitch.NaturalFlowProductionWell:
+        if (props_NaturalFlowProductionWell == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("ProductionType");
-          props_ProductionType = cpb.create();
+          cpb.presentationByName();
+          props_NaturalFlowProductionWell = cpb.create();
         }
-        return props_ProductionType;
+        return props_NaturalFlowProductionWell;
       case LanguageConceptSwitch.ProductionWell:
         if (props_ProductionWell == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.presentationByName();
           props_ProductionWell = cpb.create();
         }
         return props_ProductionWell;
       case LanguageConceptSwitch.Reservoir:
         if (props_Reservoir == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("Reservoir");
           props_Reservoir = cpb.create();
         }
         return props_Reservoir;
-      case LanguageConceptSwitch.ReservoirType:
-        if (props_ReservoirType == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("ReservoirType");
-          props_ReservoirType = cpb.create();
-        }
-        return props_ReservoirType;
-      case LanguageConceptSwitch.ReservoriWell:
-        if (props_ReservoriWell == null) {
+      case LanguageConceptSwitch.SiliciclasticReservoir:
+        if (props_SiliciclasticReservoir == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
-          props_ReservoriWell = cpb.create();
+          props_SiliciclasticReservoir = cpb.create();
         }
-        return props_ReservoriWell;
-      case LanguageConceptSwitch.SiliciclasticReservoirType:
-        if (props_SiliciclasticReservoirType == null) {
+        return props_SiliciclasticReservoir;
+      case LanguageConceptSwitch.Targets:
+        if (props_Targets == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("SiliciclasticReservoirType");
-          props_SiliciclasticReservoirType = cpb.create();
+          cpb.rawPresentation("Targets");
+          props_Targets = cpb.create();
         }
-        return props_SiliciclasticReservoirType;
+        return props_Targets;
       case LanguageConceptSwitch.Well:
         if (props_Well == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           props_Well = cpb.create();
         }
         return props_Well;
-      case LanguageConceptSwitch.WellHeadType:
-        if (props_WellHeadType == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("WellHeadType");
-          props_WellHeadType = cpb.create();
-        }
-        return props_WellHeadType;
     }
     return null;
   }
