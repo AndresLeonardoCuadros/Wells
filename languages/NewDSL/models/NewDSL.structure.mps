@@ -262,6 +262,13 @@
       <property role="TrG5h" value="temperaturePressure" />
       <ref role="AX2Wp" node="2CJmngfwtPV" resolve="float" />
     </node>
+    <node concept="1TJgyj" id="1gUQE5mEu7e" role="1TKVEi">
+      <property role="IQ2ns" value="1457717815886340558" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="lines" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" node="1gUQE5mEbtO" resolve="DepositWellRow" />
+    </node>
   </node>
   <node concept="1TIwiD" id="2CJmngfwtUk">
     <property role="EcuMT" value="3039746628509621908" />
@@ -489,6 +496,23 @@
       <property role="3tVfz5" value="3039746628509621641" />
       <property role="TrG5h" value="Gas" />
       <property role="1L1pqM" value="gas" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="1gUQE5mEbtO">
+    <property role="EcuMT" value="1457717815886264180" />
+    <property role="3GE5qa" value="" />
+    <property role="TrG5h" value="DepositWellRow" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="1TJgyi" id="1gUQE5mEbtQ" role="1TKVEl">
+      <property role="IQ2nx" value="1457717815886264182" />
+      <property role="TrG5h" value="index" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyj" id="1gUQE5mJ0u1" role="1TKVEi">
+      <property role="IQ2ns" value="1457717815887529857" />
+      <property role="20kJfa" value="depositWell" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="2CJmngfwtTX" resolve="DepositWell" />
     </node>
   </node>
 </model>

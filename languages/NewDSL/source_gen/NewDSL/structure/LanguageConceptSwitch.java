@@ -13,18 +13,19 @@ public final class LanguageConceptSwitch {
   public static final int CarbonateReservoir = 1;
   public static final int Coordinates = 2;
   public static final int DepositWell = 3;
-  public static final int DesignerWell = 4;
-  public static final int ExploratoryWell = 5;
-  public static final int HorizontalWell = 6;
-  public static final int InjectionWell = 7;
-  public static final int InstalledAccessories = 8;
-  public static final int MultilateralWell = 9;
-  public static final int NaturalFlowProductionWell = 10;
-  public static final int ProductionWell = 11;
-  public static final int Reservoir = 12;
-  public static final int SiliciclasticReservoir = 13;
-  public static final int Targets = 14;
-  public static final int Well = 15;
+  public static final int DepositWellRow = 4;
+  public static final int DesignerWell = 5;
+  public static final int ExploratoryWell = 6;
+  public static final int HorizontalWell = 7;
+  public static final int InjectionWell = 8;
+  public static final int InstalledAccessories = 9;
+  public static final int MultilateralWell = 10;
+  public static final int NaturalFlowProductionWell = 11;
+  public static final int ProductionWell = 12;
+  public static final int Reservoir = 13;
+  public static final int SiliciclasticReservoir = 14;
+  public static final int Targets = 15;
+  public static final int Well = 16;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0x70d970ca2bc64a80L, 0xa08c12893f37926cL);
@@ -32,6 +33,7 @@ public final class LanguageConceptSwitch {
     builder.put(0x2a2f59740f81de0bL, CarbonateReservoir);
     builder.put(0x2a2f59740f81dd92L, Coordinates);
     builder.put(0x2a2f59740f81de7dL, DepositWell);
+    builder.put(0x143adaa156a8b774L, DepositWellRow);
     builder.put(0x2a2f59740f81de94L, DesignerWell);
     builder.put(0x2a2f59740f81de70L, ExploratoryWell);
     builder.put(0x2a2f59740f81de8fL, HorizontalWell);

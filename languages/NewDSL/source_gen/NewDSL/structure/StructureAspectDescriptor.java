@@ -22,6 +22,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptCarbonateReservoir = createDescriptorForCarbonateReservoir();
   /*package*/ final ConceptDescriptor myConceptCoordinates = createDescriptorForCoordinates();
   /*package*/ final ConceptDescriptor myConceptDepositWell = createDescriptorForDepositWell();
+  /*package*/ final ConceptDescriptor myConceptDepositWellRow = createDescriptorForDepositWellRow();
   /*package*/ final ConceptDescriptor myConceptDesignerWell = createDescriptorForDesignerWell();
   /*package*/ final ConceptDescriptor myConceptExploratoryWell = createDescriptorForExploratoryWell();
   /*package*/ final ConceptDescriptor myConceptHorizontalWell = createDescriptorForHorizontalWell();
@@ -55,7 +56,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAlsProductionWell, myConceptCarbonateReservoir, myConceptCoordinates, myConceptDepositWell, myConceptDesignerWell, myConceptExploratoryWell, myConceptHorizontalWell, myConceptInjectionWell, myConceptInstalledAccessories, myConceptMultilateralWell, myConceptNaturalFlowProductionWell, myConceptProductionWell, myConceptReservoir, myConceptSiliciclasticReservoir, myConceptTargets, myConceptWell);
+    return Arrays.asList(myConceptAlsProductionWell, myConceptCarbonateReservoir, myConceptCoordinates, myConceptDepositWell, myConceptDepositWellRow, myConceptDesignerWell, myConceptExploratoryWell, myConceptHorizontalWell, myConceptInjectionWell, myConceptInstalledAccessories, myConceptMultilateralWell, myConceptNaturalFlowProductionWell, myConceptProductionWell, myConceptReservoir, myConceptSiliciclasticReservoir, myConceptTargets, myConceptWell);
   }
 
   @Override
@@ -70,6 +71,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptCoordinates;
       case LanguageConceptSwitch.DepositWell:
         return myConceptDepositWell;
+      case LanguageConceptSwitch.DepositWellRow:
+        return myConceptDepositWellRow;
       case LanguageConceptSwitch.DesignerWell:
         return myConceptDesignerWell;
       case LanguageConceptSwitch.ExploratoryWell:
@@ -150,6 +153,16 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(3);
     b.property("depthPressure", 0x2a2f59740f81de83L).type(MetaIdFactory.dataTypeId(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81dd7bL)).origin("3039746628509621891").done();
     b.property("temperaturePressure", 0x2a2f59740f81de88L).type(MetaIdFactory.dataTypeId(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81dd7bL)).origin("3039746628509621896").done();
+    b.aggregate("lines", 0x143adaa156a9e1ceL).target(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x143adaa156a8b774L).optional(true).ordered(true).multiple(true).origin("1457717815886340558").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForDepositWellRow() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NewDSL", "DepositWellRow", 0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x143adaa156a8b774L);
+    b.class_(false, false, false);
+    b.origin("r:c2e19f41-b779-4566-b6a0-4e4349db4a36(NewDSL.structure)/1457717815886264180");
+    b.version(3);
+    b.property("index", 0x143adaa156a8b776L).type(PrimitiveTypeId.INTEGER).origin("1457717815886264182").done();
+    b.associate("depositWell", 0x143adaa156bc0781L).target(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81de7dL).optional(false).origin("1457717815887529857").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForDesignerWell() {

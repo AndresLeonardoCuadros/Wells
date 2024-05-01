@@ -27,8 +27,57 @@ import java.util.Objects;
 import jetbrains.mps.lang.core.behavior.PropertyAttribute__BehaviorDescriptor;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.openapi.editor.update.AttributeKind;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
+import javax.swing.JComponent;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import de.slisson.mps.tables.runtime.cells.TableEditor;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import de.slisson.mps.hacks.editor.EditorCacheHacks;
+import de.slisson.mps.tables.runtime.cells.ChildsTracker;
+import de.slisson.mps.tables.runtime.cells.PartialTableExtractor;
+import de.slisson.mps.tables.runtime.gridmodel.Grid;
+import java.util.List;
+import de.slisson.mps.tables.runtime.gridmodel.HeaderGrid;
+import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import de.slisson.mps.tables.runtime.style.ITableStyleFactory;
+import de.slisson.mps.tables.runtime.gridmodel.IHeaderNodeInsertAction;
+import de.slisson.mps.tables.runtime.gridmodel.IHeaderNodeDeleteAction;
+import de.slisson.mps.tables.runtime.gridmodel.HeaderGridFactory;
+import de.slisson.mps.tables.runtime.gridmodel.Header;
+import de.slisson.mps.tables.runtime.gridmodel.EditorCellHeader;
+import de.slisson.mps.tables.runtime.gridmodel.StringHeaderReference;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import de.slisson.mps.tables.runtime.gridmodel.GridAdapter;
+import de.slisson.mps.tables.runtime.gridmodel.GridElementFactory;
+import de.slisson.mps.tables.runtime.gridmodel.IGridElement;
+import de.slisson.mps.tables.runtime.substitute.CellQuerySubstituteInfo;
+import de.slisson.mps.tables.runtime.cells.TableUtils;
+import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
+import jetbrains.mps.openapi.editor.cells.CellAction;
+import de.slisson.mps.tables.runtime.cells.EditorCell_GridCell;
+import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
+import jetbrains.mps.lang.editor.cellProviders.SReferenceCellProvider;
+import jetbrains.mps.editor.runtime.impl.CellUtil;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
+import jetbrains.mps.nodeEditor.cellMenu.SReferenceSubstituteInfoSmartReferenceDecorator;
+import jetbrains.mps.nodeEditor.cellMenu.SReferenceSubstituteInfo;
+import jetbrains.mps.lang.core.behavior.LinkAttribute__BehaviorDescriptor;
+import jetbrains.mps.nodeEditor.cells.ModelAccessor;
+import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 
 /*package*/ class DepositWell_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -59,6 +108,8 @@ import org.jetbrains.mps.openapi.language.SConcept;
     editorCell.addEditorCell(createConstant_1());
     editorCell.addEditorCell(createCollection_1());
     editorCell.addEditorCell(createComponent_1());
+    editorCell.addEditorCell(createCollection_4());
+    editorCell.addEditorCell(createTable_1());
     return editorCell;
   }
   private EditorCell createConstant_0() {
@@ -176,13 +227,651 @@ import org.jetbrains.mps.openapi.language.SConcept;
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "NewDSL.editor.Reservoirs");
     return editorCell;
   }
+  private EditorCell createCollection_4() {
+    EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
+    editorCell.setCellId("Collection_x0teg0_f0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(createJComponent_0());
+    return editorCell;
+  }
+  private EditorCell createJComponent_0() {
+    EditorCell editorCell = EditorCell_Component.createComponentCell(getEditorContext(), myNode, _QueryFunction_JComponent_x0teg0_a0f0(), "JComponent_x0teg0_a5a");
+    editorCell.setCellId("JComponent_x0teg0_a5a_0");
+    return editorCell;
+  }
+  private JComponent _QueryFunction_JComponent_x0teg0_a0f0() {
+    JButton button = new JButton("TEST");
+    button.addActionListener(new ActionListener() {
+      @Override
+      public void actionPerformed(ActionEvent p1) {
+        getEditorContext().getRepository().getModelAccess();
+      }
+    });
+    return button;
+  }
+  private EditorCell createTable_0(final EditorContext editorContext, final SNode node) {
+
+    final Wrappers._T<TableEditor> editorCell = new Wrappers._T<TableEditor>(null);
+    _FunctionTypes._void_P0_E0 creator = () -> EditorCacheHacks.noCaching(editorContext, () -> {
+      try {
+
+        ChildsTracker.pushNewInstance();
+        PartialTableExtractor.pushNewInstance();
+        Grid grid = new Grid();
+
+        // column headers
+        {
+          List<HeaderGrid> headerGrids = new ArrayList<HeaderGrid>(0);
+          grid.setColumnHeaders(headerGrids);
+        }
+
+        // row headers
+        {
+          List<HeaderGrid> headerGrids = new ArrayList<HeaderGrid>(0);
+          grid.setRowHeaders(headerGrids);
+        }
+        final Grid childGrid = createStaticVertical_x0teg0_a6a(editorContext, node);
+        childGrid.setSpanX(Math.max(1, grid.getColumnHeadersSizeX()));
+        childGrid.setSpanY(Math.max(1, grid.getRowHeadersSizeY()));
+        grid.setElement(0, 0, childGrid);
+
+        editorCell.value = new TableEditor(editorContext, node, grid);
+        editorCell.value.setCellId("Table_x0teg0_g0");
+
+
+        editorCell.value.init();
+      } finally {
+        PartialTableExtractor.popInstance();
+        ChildsTracker.popInstance(true);
+      }
+    });
+
+    creator.invoke();
+
+    return editorCell.value;
+
+  }
+  private EditorCell createTable_1() {
+    return createTable_0(getEditorContext(), myNode);
+  }
+  public Grid createStaticVertical_x0teg0_a6a(final EditorContext editorContext, final SNode node) {
+    Grid grid = new Grid();
+    grid.setColumnHeaders(0, 0, createHeaderCollection_x0teg0_a0g0(editorContext, node));
+
+    List<Grid> children = new ArrayList<Grid>(1);
+    if (true) {
+      children.add(createStaticHorizontal_x0teg0_a0g0(editorContext, node));
+    }
+    int maxWidth = grid.getColumnHeadersSizeX();
+    for (Grid child : ListSequence.fromList(children)) {
+      maxWidth = Math.max(maxWidth, child.getSizeX());
+    }
+    for (int y = 0; y < children.size(); y++) {
+      if (maxWidth > 0) {
+        children.get(y).setSpanX(maxWidth);
+      }
+      grid.setElement(0, y, children.get(y));
+    }
+    final Style style = new ITableStyleFactory() {
+      public Style createStyle(final int columnIndex, final int rowIndex) {
+        Style style = new StyleImpl();
+        final EditorCell editorCell = null;
+        return style;
+      }
+    }.createStyle(0, 0);
+    grid.setStyle(style);
+    return grid;
+  }
+  public HeaderGrid createHeaderCollection_x0teg0_a0g0(final EditorContext editorContext, final SNode node) {
+    IHeaderNodeInsertAction insertAction = null;
+    IHeaderNodeDeleteAction deleteAction = null;
+
+    List<HeaderGrid> nodeList = new ArrayList<HeaderGrid>();
+    nodeList.add(createStaticHeader_x0teg0_a0a6a(editorContext, node));
+    nodeList.add(createStaticHeader_x0teg0_b0a6a(editorContext, node));
+    nodeList.add(createStaticHeader_x0teg0_c0a6a(editorContext, node));
+
+    return new HeaderGridFactory(editorContext, node, true).createFromHeaderGridList(nodeList);
+  }
+  public HeaderGrid createStaticHeader_x0teg0_a0a6a(final EditorContext editorContext, final SNode snode) {
+    final Style style = new ITableStyleFactory() {
+      public Style createStyle(final int columnIndex, final int rowIndex) {
+        Style style = new StyleImpl();
+        final EditorCell editorCell = null;
+        return style;
+      }
+    }.createStyle(0, 0);
+    final EditorCell_Constant cell = new EditorCell_Constant(editorContext, snode, "Prueba1", false);
+    Header header = new EditorCellHeader(new StringHeaderReference("Prueba1"), cell);
+    header.setLabel("Prueba1");
+    header.setStyle(style);
+    HeaderGrid grid = new HeaderGrid();
+    grid.setElement(0, 0, header);
+    return grid;
+  }
+  public HeaderGrid createStaticHeader_x0teg0_b0a6a(final EditorContext editorContext, final SNode snode) {
+    final Style style = new ITableStyleFactory() {
+      public Style createStyle(final int columnIndex, final int rowIndex) {
+        Style style = new StyleImpl();
+        final EditorCell editorCell = null;
+        return style;
+      }
+    }.createStyle(0, 0);
+    final EditorCell_Constant cell = new EditorCell_Constant(editorContext, snode, "prueba2", false);
+    Header header = new EditorCellHeader(new StringHeaderReference("prueba2"), cell);
+    header.setLabel("prueba2");
+    header.setStyle(style);
+    HeaderGrid grid = new HeaderGrid();
+    grid.setElement(0, 0, header);
+    return grid;
+  }
+  public HeaderGrid createStaticHeader_x0teg0_c0a6a(final EditorContext editorContext, final SNode snode) {
+    final Style style = new ITableStyleFactory() {
+      public Style createStyle(final int columnIndex, final int rowIndex) {
+        Style style = new StyleImpl();
+        final EditorCell editorCell = null;
+        return style;
+      }
+    }.createStyle(0, 0);
+    final EditorCell_Constant cell = new EditorCell_Constant(editorContext, snode, "prueba3", false);
+    Header header = new EditorCellHeader(new StringHeaderReference("prueba3"), cell);
+    header.setLabel("prueba3");
+    header.setStyle(style);
+    HeaderGrid grid = new HeaderGrid();
+    grid.setElement(0, 0, header);
+    return grid;
+  }
+  public Grid createStaticHorizontal_x0teg0_a0g0(final EditorContext editorContext, final SNode node) {
+    Grid grid = new Grid();
+    grid.setRowHeaders(0, 0, createHeadQuery_x0teg0_a0a6a(editorContext, node));
+
+    List<Grid> children = new ArrayList<Grid>(1);
+    if (true) {
+      children.add(createTableCellQuery_x0teg0_a0a6a(editorContext, node));
+    }
+    int maxHeight = grid.getRowHeadersSizeY();
+    for (Grid child : ListSequence.fromList(children)) {
+      maxHeight = Math.max(maxHeight, child.getSizeY());
+    }
+    for (int x = 0; x < children.size(); x++) {
+      if (maxHeight > 0) {
+        children.get(x).setSpanY(maxHeight);
+      }
+      grid.setElement(x, 0, children.get(x));
+    }
+    final Style style = new ITableStyleFactory() {
+      public Style createStyle(final int columnIndex, final int rowIndex) {
+        Style style = new StyleImpl();
+        final EditorCell editorCell = null;
+        return style;
+      }
+    }.createStyle(0, 0);
+    grid.setStyle(style);
+    return grid;
+  }
+  public HeaderGrid createHeadQuery_x0teg0_a0a6a(final EditorContext editorContext, final SNode node) {
+    Object queryResult = new Object() {
+      public Object query() {
+        return ListSequence.fromList(SLinkOperations.getChildren(node, LINKS.lines$l5ye)).select((it) -> Integer.toString(SPropertyOperations.getInteger(it, PROPS.index$KnId) + 1));
+      }
+    }.query();
+    IHeaderNodeInsertAction insertAction = new IHeaderNodeInsertAction() {
+      public void insertNew(int index) {
+        SNodeFactoryOperations.addNewChild(node, LINKS.lines$l5ye, null);
+      }
+    };
+    IHeaderNodeDeleteAction deleteAction = new IHeaderNodeDeleteAction() {
+      public void delete(final int index) {
+        if (ListSequence.fromList(SLinkOperations.getChildren(node, LINKS.lines$l5ye)).count() > 1) {
+          ListSequence.fromList(SLinkOperations.getChildren(node, LINKS.lines$l5ye)).removeElementAt(index);
+        }
+      }
+    };
+    HeaderGrid grid = new HeaderGridFactory(editorContext, node, false).createFromObject(queryResult, new StringHeaderReference("1457717815885717459"), insertAction, deleteAction, 0, new ITableStyleFactory() {
+      public Style createStyle(final int columnIndex, final int rowIndex) {
+        Style style = new StyleImpl();
+        final EditorCell editorCell = null;
+        return style;
+      }
+    }, "theHeaders");
+
+    return grid;
+  }
+  public Grid createTableCellQuery_x0teg0_a0a6a(final EditorContext editorContext, final SNode node) {
+    final Grid grid = new Grid();
+    final GridAdapter gridAdapter = new GridAdapter(grid, editorContext, node);
+
+    try {
+      getCellFactory().pushCellContext();
+      getCellFactory().addCellContextHints();
+      getCellFactory().removeCellContextHints();
+      new Object() {
+        {
+        }
+        public int getSizeX() {
+          return 3;
+        }
+        public int getSizeY() {
+          return ListSequence.fromList(SLinkOperations.getChildren(node, LINKS.lines$l5ye)).count();
+        }
+        public void loadElements() {
+          final int sizeX = getSizeX();
+          final int sizeY = getSizeY();
+
+          for (int xi = 0; xi < sizeX; xi++) {
+            for (int yi = 0; yi < sizeY; yi++) {
+              final int x = xi;
+              final int y = yi;
+              // (instance of ClassifierType)
+              Object queryResult_ = queryCellsSafely(node, x, y);
+              grid.setElement(x, y, new GridElementFactory(editorContext, node, false, false, grid).create(queryResult_));
+
+              // set headers
+
+              IGridElement currentGridElement = grid.getElement(x, y);
+
+              // set substitute info
+              if (currentGridElement instanceof Grid && !(((Grid) currentGridElement).isEmpty())) {
+                Grid currentGrid = ((Grid) currentGridElement);
+                for (int indexX = 0; indexX < currentGrid.getSizeX(); indexX++) {
+                  for (int indexY = 0; indexY < currentGrid.getSizeY(); indexY++) {
+                    IGridElement listElement = currentGrid.getElement(indexX, indexY);
+                    final int index = Math.max(indexX, indexY);
+
+                    listElement.setSubstituteInfo(new CellQuerySubstituteInfo(editorContext, node, (queryResult_ instanceof SNode ? ((SNode) queryResult_) : SNodeOperations.cast(TableUtils.getSNode(listElement, CONCEPTS.BaseConcept$gP), CONCEPTS.BaseConcept$gP)), CONCEPTS.BaseConcept$gP, null) {
+                      public SNode substituteNode(SNode currentNode, SNode newValue) {
+                        return doSubstituteNode(node, x, y, index, editorContext, currentNode, newValue);
+                      }
+                    });
+
+                    if (canCreate(x, y, index)) {
+                      listElement.setInsertBeforeAction(new AbstractCellAction() {
+                        public void execute(EditorContext p0) {
+                          createNode(x, y, index);
+                        }
+                      });
+                    }
+                    if (canCreate(x, y, index + 1)) {
+                      listElement.setInsertAction(new AbstractCellAction() {
+                        public void execute(EditorContext p0) {
+                          createNode(x, y, index + 1);
+                        }
+                      });
+                    }
+                  }
+                }
+              } else {
+                final SNode nodeAtPosition = (queryResult_ instanceof SNode ? ((SNode) queryResult_) : SNodeOperations.cast(TableUtils.getSNode(currentGridElement, CONCEPTS.BaseConcept$gP), CONCEPTS.BaseConcept$gP));
+                gridAdapter.setSubstituteInfo(x, y, new CellQuerySubstituteInfo(editorContext, node, nodeAtPosition, CONCEPTS.BaseConcept$gP, null) {
+                  public SNode substituteNode(SNode currentNode, SNode newValue) {
+                    return doSubstituteNode(node, x, y, 0, editorContext, currentNode, newValue);
+                  }
+                });
+                if (canCreate(x, y, 0)) {
+                  currentGridElement = grid.getElement(x, y);
+
+                  CellAction insertAction = new AbstractCellAction() {
+                    public void execute(EditorContext p0) {
+                      createNode(x, y, 0);
+                    }
+                  };
+                  currentGridElement.setInsertBeforeAction(insertAction);
+                  currentGridElement.setInsertAction(insertAction);
+                  currentGridElement.setPasteAction(new AbstractCellAction() {
+                    public boolean isNested(EditorCell cell) {
+                      if (cell instanceof EditorCell_GridCell) {
+                        return false;
+                      }
+                      jetbrains.mps.openapi.editor.cells.EditorCell_Collection parent = cell.getParent();
+                      if (parent == null) {
+                        return false;
+                      }
+                      Iterable<EditorCell> siblings = parent;
+                      if (Sequence.fromIterable(siblings).subtract(Sequence.fromIterable(Sequence.<EditorCell>singleton(cell))).isNotEmpty()) {
+                        return true;
+                      }
+                      return isNested(parent);
+                    }
+                    @Override
+                    public boolean canExecute(EditorContext context) {
+                      List<EditorCell> selectedCells = context.getEditorComponent().getSelectionManager().getSelection().getSelectedCells();
+                      if (ListSequence.fromList(selectedCells).count() != 1 || isNested(ListSequence.fromList(selectedCells).first())) {
+                        return false;
+                      }
+                      return super.canExecute(context);
+                    }
+                    public void execute(EditorContext ec) {
+                      List<SNode> nodesFromClipboard = CopyPasteUtil.getNodesFromClipboard(SNodeOperations.getModel(node));
+                      SNode nodeFromClipboard = (nodesFromClipboard.size() > 0 ? nodesFromClipboard.get(0) : null);
+                      if (nodeFromClipboard != null && SNodeOperations.isInstanceOf(nodeFromClipboard, CONCEPTS.BaseConcept$gP)) {
+                        if ((SNodeOperations.getParent(nodeFromClipboard) != null)) {
+                          nodeFromClipboard = SNodeOperations.copyNode(nodeFromClipboard);
+                        }
+                        doSubstituteNode(node, x, y, 0, editorContext, nodeAtPosition, nodeFromClipboard);
+                      }
+                    }
+                  });
+                }
+              }
+
+
+              // style
+              final Object queryResult = queryResult_;
+              grid.getElement(x, y).setStyle(new ITableStyleFactory() {
+                public Style createStyle(final int columnIndex, final int rowIndex) {
+                  Style style = new StyleImpl();
+                  final EditorCell editorCell = null;
+                  return style;
+                }
+              }.createStyle(x, y));
+            }
+          }
+        }
+        public boolean canCreate(int columnIndex, int rowIndex, int listIndex) {
+          return true;
+        }
+        public SNode createNode(int columnIndex, int rowIndex, int listIndex) {
+          return doSubstituteNode(node, columnIndex, rowIndex, listIndex, editorContext, null, null);
+        }
+
+        public Object queryCellsSafely(final SNode node, final int columnIndex, final int rowIndex) {
+          try {
+            return queryCells(node, columnIndex, rowIndex);
+          } catch (Exception ex) {
+            Logger.getLogger(getClass()).error("Failed to query cell [" + rowIndex + ", " + columnIndex + "]", ex);
+            return new EditorCell_Error(editorContext, node, "!exception! for [" + rowIndex + ", " + columnIndex + "]:" + ex.getMessage());
+          }
+        }
+
+        private Object queryCells(final SNode node, final int columnIndex, final int rowIndex) {
+          SNode line = ListSequence.fromList(SLinkOperations.getChildren(node, LINKS.lines$l5ye)).getElement(rowIndex);
+          switch (columnIndex) {
+            case 0:
+              return new CellCreateOperation_a0a0b0a0a0g0(editorContext, line).create();
+            case 1:
+              return new CellCreateOperation_a0a1b0a0a0g0(editorContext, line).create();
+            case 2:
+              return new CellCreateOperation_a0a2b0a0a0g0(editorContext, line).create();
+            default:
+              throw new RuntimeException("super error");
+          }
+        }
+
+        public SNode doSubstituteNode(SNode node, int columnIndex, int rowIndex, int listIndex, EditorContext editorContext, SNode currentNode, SNode newValue) {
+          currentNode = SNodeOperations.cast(currentNode, CONCEPTS.BaseConcept$gP);
+          newValue = SNodeOperations.cast(newValue, CONCEPTS.BaseConcept$gP);
+          return null;
+        }
+      }.loadElements();
+
+    } finally {
+      getCellFactory().popCellContext();
+    }
+
+
+    return grid;
+  }
+  public static class CellCreateOperation_a0a0b0a0a0g0 extends AbstractEditorBuilder {
+    private SNode myNode;
+
+    public CellCreateOperation_a0a0b0a0a0g0(EditorContext editorContext, SNode node) {
+      super(editorContext);
+      myNode = node;
+    }
+
+    @NotNull
+    @Override
+    public SNode getNode() {
+      return myNode;
+    }
+
+    public EditorCell create() {
+      return createCollection_5();
+    }
+    private EditorCell createCollection_5() {
+      EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
+      editorCell.setCellId("Collection_x0teg0_a0a0a0a1a0a0a6a");
+      editorCell.addEditorCell(createRefCell_0());
+      return editorCell;
+    }
+    private EditorCell createRefCell_0() {
+      final SReferenceLink referenceLink = LINKS.depositWell$Yx_L;
+      SReferenceCellProvider provider = new SReferenceCellProvider(getNode(), referenceLink, getEditorContext()) {
+        protected EditorCell createReferenceCell(final SNode targetNode) {
+          EditorCell cell = getUpdateSession().updateReferencedNodeCell(() -> new Inline_Builder0(getEditorContext(), getNode(), targetNode).createCell(), targetNode, LINKS.depositWell$Yx_L);
+          CellUtil.setupIDeprecatableStyles(targetNode, cell);
+          setSemanticNodeToCells(cell, getNode());
+          installDeleteActions_notnull_smartReference(cell);
+          return cell;
+        }
+        @Override
+        protected EditorCell createErrorCell(String error) {
+          EditorCell_Error cell = new EditorCell_Error(getEditorContext(), getNode(), error, true);
+          cell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(getNode(), CellAction_DeleteNode.DeleteDirection.FORWARD));
+          cell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(getNode(), CellAction_DeleteNode.DeleteDirection.BACKWARD));
+          return cell;
+        }
+      };
+
+      provider.setNoTargetText("<no depositWell>");
+      EditorCell editorCell = provider.createCell();
+
+      if (editorCell.getSRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setSRole(LINKS.depositWell$Yx_L);
+      }
+      editorCell.setSubstituteInfo(new SReferenceSubstituteInfoSmartReferenceDecorator(new SReferenceSubstituteInfo(editorCell, referenceLink)));
+      Iterable<SNode> referenceAttributes = SNodeOperations.ofConcept(new IAttributeDescriptor.AllAttributes().list(myNode), CONCEPTS.LinkAttribute$v_);
+      Iterable<SNode> currentReferenceAttributes = Sequence.fromIterable(referenceAttributes).where((it) -> Objects.equals(LinkAttribute__BehaviorDescriptor.getLink_id1avfQ4BEFo6.invoke(it), referenceLink));
+      if (Sequence.fromIterable(currentReferenceAttributes).isNotEmpty()) {
+        EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
+        return manager.createNodeRoleAttributeCell(Sequence.fromIterable(currentReferenceAttributes).first(), AttributeKind.REFERENCE, editorCell);
+      } else
+      return editorCell;
+    }
+    /*package*/ static class Inline_Builder0 extends AbstractEditorBuilder {
+      @NotNull
+      private SNode myNode;
+      private SNode myReferencingNode;
+
+      /*package*/ Inline_Builder0(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
+        super(context);
+        myReferencingNode = referencingNode;
+        myNode = node;
+      }
+
+      /*package*/ EditorCell createCell() {
+        return createProperty_2();
+      }
+
+      @NotNull
+      @Override
+      public SNode getNode() {
+        return myNode;
+      }
+
+      private EditorCell createProperty_2() {
+        getCellFactory().pushCellContext();
+        try {
+          final SProperty property = PROPS.casingSize$VORa;
+          getCellFactory().setPropertyInfo(new SPropertyInfo(myNode, property));
+          EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new SPropertyAccessor(myNode, property, true, false), myNode);
+          editorCell.setDefaultText("<no casingSize>");
+          editorCell.setCellId("property_casingSize");
+          Style style = new StyleImpl();
+          style.set(StyleAttributes.AUTO_DELETABLE, true);
+          editorCell.getStyle().putAll(style);
+          editorCell.setSubstituteInfo(new SPropertySubstituteInfo(editorCell, property));
+          setCellContext(editorCell);
+          Iterable<SNode> propertyAttributes = SNodeOperations.ofConcept(new IAttributeDescriptor.AllAttributes().list(myNode), CONCEPTS.PropertyAttribute$Gb);
+          Iterable<SNode> currentPropertyAttributes = Sequence.fromIterable(propertyAttributes).where((it) -> Objects.equals(PropertyAttribute__BehaviorDescriptor.getProperty_id1avfQ4BBzOo.invoke(it), property));
+          if (Sequence.fromIterable(currentPropertyAttributes).isNotEmpty()) {
+            EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
+            return manager.createNodeRoleAttributeCell(Sequence.fromIterable(currentPropertyAttributes).first(), AttributeKind.PROPERTY, editorCell);
+          } else
+          return editorCell;
+        } finally {
+          getCellFactory().popCellContext();
+        }
+      }
+    }
+  }
+  public static class CellCreateOperation_a0a1b0a0a0g0 extends AbstractEditorBuilder {
+    private SNode myNode;
+
+    public CellCreateOperation_a0a1b0a0a0g0(EditorContext editorContext, SNode node) {
+      super(editorContext);
+      myNode = node;
+    }
+
+    @NotNull
+    @Override
+    public SNode getNode() {
+      return myNode;
+    }
+
+    public EditorCell create() {
+      return createCollection_6();
+    }
+    private EditorCell createCollection_6() {
+      EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
+      editorCell.setCellId("Collection_x0teg0_a0a0a0b1a0a0a6a");
+      editorCell.addEditorCell(createRefCell_1());
+      return editorCell;
+    }
+    private EditorCell createRefCell_1() {
+      final SReferenceLink referenceLink = LINKS.depositWell$Yx_L;
+      SReferenceCellProvider provider = new SReferenceCellProvider(getNode(), referenceLink, getEditorContext()) {
+        protected EditorCell createReferenceCell(final SNode targetNode) {
+          EditorCell cell = getUpdateSession().updateReferencedNodeCell(() -> new Inline_Builder1(getEditorContext(), getNode(), targetNode).createCell(), targetNode, LINKS.depositWell$Yx_L);
+          CellUtil.setupIDeprecatableStyles(targetNode, cell);
+          setSemanticNodeToCells(cell, getNode());
+          installDeleteActions_notnull_smartReference(cell);
+          return cell;
+        }
+        @Override
+        protected EditorCell createErrorCell(String error) {
+          EditorCell_Error cell = new EditorCell_Error(getEditorContext(), getNode(), error, true);
+          cell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(getNode(), CellAction_DeleteNode.DeleteDirection.FORWARD));
+          cell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(getNode(), CellAction_DeleteNode.DeleteDirection.BACKWARD));
+          return cell;
+        }
+      };
+
+      provider.setNoTargetText("<no depositWell>");
+      EditorCell editorCell = provider.createCell();
+
+      if (editorCell.getSRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setSRole(LINKS.depositWell$Yx_L);
+      }
+      editorCell.setSubstituteInfo(new SReferenceSubstituteInfoSmartReferenceDecorator(new SReferenceSubstituteInfo(editorCell, referenceLink)));
+      Iterable<SNode> referenceAttributes = SNodeOperations.ofConcept(new IAttributeDescriptor.AllAttributes().list(myNode), CONCEPTS.LinkAttribute$v_);
+      Iterable<SNode> currentReferenceAttributes = Sequence.fromIterable(referenceAttributes).where((it) -> Objects.equals(LinkAttribute__BehaviorDescriptor.getLink_id1avfQ4BEFo6.invoke(it), referenceLink));
+      if (Sequence.fromIterable(currentReferenceAttributes).isNotEmpty()) {
+        EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
+        return manager.createNodeRoleAttributeCell(Sequence.fromIterable(currentReferenceAttributes).first(), AttributeKind.REFERENCE, editorCell);
+      } else
+      return editorCell;
+    }
+    /*package*/ static class Inline_Builder1 extends AbstractEditorBuilder {
+      @NotNull
+      private SNode myNode;
+      private SNode myReferencingNode;
+
+      /*package*/ Inline_Builder1(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
+        super(context);
+        myReferencingNode = referencingNode;
+        myNode = node;
+      }
+
+      /*package*/ EditorCell createCell() {
+        return createProperty_3();
+      }
+
+      @NotNull
+      @Override
+      public SNode getNode() {
+        return myNode;
+      }
+
+      private EditorCell createProperty_3() {
+        getCellFactory().pushCellContext();
+        try {
+          final SProperty property = PROPS.depthPressure$40Z6;
+          getCellFactory().setPropertyInfo(new SPropertyInfo(myNode, property));
+          EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new SPropertyAccessor(myNode, property, true, false), myNode);
+          editorCell.setDefaultText("<no depthPressure>");
+          editorCell.setCellId("property_depthPressure1");
+          Style style = new StyleImpl();
+          style.set(StyleAttributes.AUTO_DELETABLE, true);
+          editorCell.getStyle().putAll(style);
+          editorCell.setSubstituteInfo(new SPropertySubstituteInfo(editorCell, property));
+          setCellContext(editorCell);
+          Iterable<SNode> propertyAttributes = SNodeOperations.ofConcept(new IAttributeDescriptor.AllAttributes().list(myNode), CONCEPTS.PropertyAttribute$Gb);
+          Iterable<SNode> currentPropertyAttributes = Sequence.fromIterable(propertyAttributes).where((it) -> Objects.equals(PropertyAttribute__BehaviorDescriptor.getProperty_id1avfQ4BBzOo.invoke(it), property));
+          if (Sequence.fromIterable(currentPropertyAttributes).isNotEmpty()) {
+            EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
+            return manager.createNodeRoleAttributeCell(Sequence.fromIterable(currentPropertyAttributes).first(), AttributeKind.PROPERTY, editorCell);
+          } else
+          return editorCell;
+        } finally {
+          getCellFactory().popCellContext();
+        }
+      }
+    }
+  }
+  public static class CellCreateOperation_a0a2b0a0a0g0 extends AbstractEditorBuilder {
+    private SNode myNode;
+
+    public CellCreateOperation_a0a2b0a0a0g0(EditorContext editorContext, SNode node) {
+      super(editorContext);
+      myNode = node;
+    }
+
+    @NotNull
+    @Override
+    public SNode getNode() {
+      return myNode;
+    }
+
+    public EditorCell create() {
+      return createReadOnlyModelAccessor_0();
+    }
+    private EditorCell createReadOnlyModelAccessor_0() {
+      EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new ModelAccessor.ReadOnly() {
+        public String getText() {
+          return SPropertyOperations.getString(SLinkOperations.getTarget(myNode, LINKS.depositWell$Yx_L), PROPS.pipeSize$VUX$);
+        }
+      }, myNode);
+      editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+      editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
+      editorCell.setCellId("ReadOnlyModelAccessor_x0teg0_a0a0a0c1a0a0a6a");
+      Style style = new StyleImpl();
+      style.set(StyleAttributes.EDITABLE, false);
+      editorCell.getStyle().putAll(style);
+      return editorCell;
+    }
+  }
 
   private static final class PROPS {
     /*package*/ static final SProperty depthPressure$40Z6 = MetaAdapterFactory.getProperty(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81de7dL, 0x2a2f59740f81de83L, "depthPressure");
     /*package*/ static final SProperty temperaturePressure$42ab = MetaAdapterFactory.getProperty(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81de7dL, 0x2a2f59740f81de88L, "temperaturePressure");
+    /*package*/ static final SProperty index$KnId = MetaAdapterFactory.getProperty(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x143adaa156a8b774L, 0x143adaa156a8b776L, "index");
+    /*package*/ static final SProperty casingSize$VORa = MetaAdapterFactory.getProperty(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81dd67L, 0x2a2f59740f81dd71L, "casingSize");
+    /*package*/ static final SProperty pipeSize$VUX$ = MetaAdapterFactory.getProperty(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81dd67L, 0x2a2f59740f81dd76L, "pipeSize");
   }
 
   private static final class CONCEPTS {
     /*package*/ static final SConcept PropertyAttribute$Gb = MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, "jetbrains.mps.lang.core.structure.PropertyAttribute");
+    /*package*/ static final SConcept BaseConcept$gP = MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept");
+    /*package*/ static final SConcept LinkAttribute$v_ = MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute");
+  }
+
+  private static final class LINKS {
+    /*package*/ static final SContainmentLink lines$l5ye = MetaAdapterFactory.getContainmentLink(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x2a2f59740f81de7dL, 0x143adaa156a9e1ceL, "lines");
+    /*package*/ static final SReferenceLink depositWell$Yx_L = MetaAdapterFactory.getReferenceLink(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x143adaa156a8b774L, 0x143adaa156bc0781L, "depositWell");
   }
 }

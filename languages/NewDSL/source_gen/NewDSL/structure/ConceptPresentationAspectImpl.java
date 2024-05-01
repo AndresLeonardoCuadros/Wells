@@ -13,6 +13,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_CarbonateReservoir;
   private ConceptPresentation props_Coordinates;
   private ConceptPresentation props_DepositWell;
+  private ConceptPresentation props_DepositWellRow;
   private ConceptPresentation props_DesignerWell;
   private ConceptPresentation props_ExploratoryWell;
   private ConceptPresentation props_HorizontalWell;
@@ -59,6 +60,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_DepositWell = cpb.create();
         }
         return props_DepositWell;
+      case LanguageConceptSwitch.DepositWellRow:
+        if (props_DepositWellRow == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x70d970ca2bc64a80L, 0xa08c12893f37926cL, 0x143adaa156a8b774L, 0x143adaa156bc0781L, "depositWell", "", "");
+          props_DepositWellRow = cpb.create();
+        }
+        return props_DepositWellRow;
       case LanguageConceptSwitch.DesignerWell:
         if (props_DesignerWell == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
